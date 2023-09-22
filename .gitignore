@@ -4,3 +4,7 @@ helm/**/*.lock
 *.tgz
 .vscode
 .env
+
+dist
+
+layout.njk
