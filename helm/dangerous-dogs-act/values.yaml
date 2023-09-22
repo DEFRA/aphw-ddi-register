@@ -27,6 +27,11 @@ container:
   limitCpu: 100m
   port: 3000
 
+ingress:
+  class: nginx
+  endpoint: dangerous-dogs-act
+  server: value.replaced.from.app.config
+
 livenessProbe:
   path: /healthz
   port: 3000
