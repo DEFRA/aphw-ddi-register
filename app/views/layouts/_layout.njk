@@ -1,5 +1,6 @@
 {% extends "govuk/template.njk" %}
 
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block pageTitle %}{{ serviceName }} - GOV.UK{% endblock %}
@@ -27,8 +28,45 @@
 {% endblock %}
 
 {% block bodyStart %}
-
+  {% if cookiesPolicy and not cookiesPolicy.confirmed %}
+    {% include "./cookies/_cookie-banner.njk" %}
+  {% endif %}
 {% endblock %}
+
+
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – <a class="govuk-link" href="#">give feedback</a> to help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "#",
+            text: "Policies"
+          },{
+            href: "/cookies",
+            text: "Cookies"
+          },{
+            href: "#",
+            text: "Contact us"
+          },{
+            href: "#",
+            text: "Accessibility statement"
+          }
+        ]
+      }
+    })
+  }}
+{% endblock %}
+
 
 {% block bodyEnd %}
   <% htmlWebpackPlugin.files.js.forEach(file => { %>

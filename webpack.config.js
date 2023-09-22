@@ -9,7 +9,10 @@ const isDev = process.env.NODE_ENV === 'development' || process.env.NODE_ENV ===
 console.log(`Running webpack in ${isDev ? 'development' : 'production'} mode`)
 
 module.exports = {
-  entry: './app/frontend/src/entry.js',
+  entry: {
+    core: './app/frontend/src/entry.js',
+    cookies: './app/frontend/src/js/cookies.js'
+  },
   mode: isDev ? 'development' : 'production',
   module: {
     rules: [
@@ -62,7 +65,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       filename: '../../views/layouts/layout.njk',
-      template: 'app/views/layouts/_layout.njk'
+      template: 'app/views/layouts/_layout.njk',
+      chunks: ['core']
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: '../views/cookies/_cookie-banner.njk',
+      template: 'app/views/cookies/_cookie-banner.template.njk',
+      chunks: ['cookies']
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[contenthash].css'

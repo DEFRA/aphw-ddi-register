@@ -1,9 +1,13 @@
+const { setRegisterName, getRegisterName } = require('../session')
+
 module.exports = [{
   method: 'GET',
   path: '/name',
   options: {
     handler: async (request, h) => {
-      return h.view('name')
+      const name = getRegisterName(request)
+      console.log(name)
+      return h.view('name', { name })
     }
   }
 },
@@ -12,6 +16,8 @@ module.exports = [{
   path: '/name',
   options: {
     handler: async (request, h) => {
+      const name = request.payload.name
+      setRegisterName(request, name)
       return h.redirect('/address')
     }
   }
