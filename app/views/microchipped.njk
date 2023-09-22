@@ -26,28 +26,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form method="POST" action="/microchipped" novalidate>
-      {{ govukRadios({
-        name: "microchipped",
-        fieldset: {
-          legend: {
-            text: "Is your dog microchipped?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes",
-            checked: microchipped == "yes"
-          },
-          {
-            value: "no",
-            text: "No",
-            checked: microchipped == "no"
-          }
-        ]
-      }) }}
+      {{ govukRadios(model) }}
 
       {{ govukButton({
         text: "Continue"
