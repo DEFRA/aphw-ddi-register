@@ -1,3 +1,3 @@
 import { initAll } from 'govuk-frontend'
-import './css/application.scss'
+import './application.scss'
 initAll()

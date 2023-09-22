@@ -9,8 +9,8 @@ console.log(`Running webpack in ${isDev ? 'development' : 'production'} mode`)
 
 module.exports = {
   entry: {
-    core: './app/frontend/src/entry.js',
-    cookies: './app/frontend/src/js/cookies.js'
+    core: './app/frontend/css/index.js',
+    cookies: './app/frontend/js/cookies.js'
   },
   mode: isDev ? 'development' : 'production',
   module: {
@@ -64,8 +64,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       inject: false,
-      filename: '../views/layouts/layout.njk',
-      template: 'app/views/layouts/_layout.njk',
+      filename: '../views/_layout.njk',
+      template: 'app/views/_layout.template.njk',
       chunks: ['core']
     }),
     new HtmlWebpackPlugin({
