@@ -1,3 +1,3 @@
 services:
-  dangerous-dogs-act-reg-web:
+  dangerous-dogs-act:
     command: npm run start:debug

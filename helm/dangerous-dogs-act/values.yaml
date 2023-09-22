@@ -1,9 +1,9 @@
 environment: production
 environmentCode:
-name: dangerous-dogs-act-reg-web
+name: dangerous-dogs-act
 namespace: dangerous-dogs
 workstream: dangerous-dogs
-image: dangerous-dogs-act-reg-web
+image: dangerous-dogs-act
 
 labels:
   component: service
@@ -12,10 +12,10 @@ appInsights:
   connectionString:
 
 containerConfigMap:
-  name: dangerous-dogs-act-reg-web-config-map
+  name: dangerous-dogs-act-config-map
 
 containerSecret:
-  name: dangerous-dogs-act-reg-web-container-secret
+  name: dangerous-dogs-act-container-secret
   type: Opaque
 
 deployment: {}

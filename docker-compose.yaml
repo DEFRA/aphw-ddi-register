@@ -1,10 +1,10 @@
 services:
-  dangerous-dogs-act-reg-web:
+  dangerous-dogs-act:
     build:
       context: .
       target: production
-    image: dangerous-dogs-act-reg-web
-    container_name: dangerous-dogs-act-reg-web
+    image: dangerous-dogs-act
+    container_name: dangerous-dogs-act
     environment:
-      APPINSIGHTS_CLOUDROLE: dangerous-dogs-act-reg-web-local
+      APPINSIGHTS_CLOUDROLE: dangerous-dogs-act-local
       APPINSIGHTS_CONNECTIONSTRING: ${APPINSIGHTS_CONNECTIONSTRING}

@@ -1,4 +1,4 @@
-# dangerous-dogs-act-reg-web
+# dangerous-dogs-act
 
 Web services to allow owners to register their dangerous dogs
 

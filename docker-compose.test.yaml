@@ -2,11 +2,11 @@
 # that test output is saved to the host
 
 services:
-  dangerous-dogs-act-reg-web:
+  dangerous-dogs-act:
     build:
       target: development
-    image: dangerous-dogs-act-reg-web-development
-    container_name: dangerous-dogs-act-reg-web-test
+    image: dangerous-dogs-act-development
+    container_name: dangerous-dogs-act-test
     command: npm run test
     volumes:
       - ./app:/home/node/app

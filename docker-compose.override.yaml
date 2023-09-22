@@ -2,11 +2,11 @@
 # to provide dependencies and expose ports for local testing
 
 services:
-  dangerous-dogs-act-reg-web:
+  dangerous-dogs-act:
     build:
       target: development
-    image: dangerous-dogs-act-reg-web-development
-    container_name: dangerous-dogs-act-reg-web-development
+    image: dangerous-dogs-act-development
+    container_name: dangerous-dogs-act-development
     ports:
       - "3000:3000"
       - "9229:9229"
