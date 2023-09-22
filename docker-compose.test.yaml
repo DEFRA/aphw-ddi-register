@@ -2,11 +2,11 @@
 # that test output is saved to the host
 
 services:
-  ffc-template-node:
+  dangerous-dogs-act-reg-web:
     build:
       target: development
-    image: ffc-template-node-development
-    container_name: ffc-template-node-test
+    image: dangerous-dogs-act-reg-web-development
+    container_name: dangerous-dogs-act-reg-web-test
     command: npm run test
     volumes:
       - ./app:/home/node/app

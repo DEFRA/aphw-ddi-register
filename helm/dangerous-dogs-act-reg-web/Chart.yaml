@@ -1,6 +1,6 @@
 apiVersion: v2
-description: description-of-project-goes-here
-name: ffc-template-node
+description: Web service to allow registration of owned dangerous dogs
+name: dangerous-dogs-act-reg-web
 # this version is automatically updated in the build pipeline
 version: 1.0.0
 dependencies:
