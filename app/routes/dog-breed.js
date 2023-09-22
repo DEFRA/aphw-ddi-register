@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = [{
   method: 'GET',
   path: '/dog-breed',
   options: {
@@ -6,4 +6,13 @@ module.exports = {
       return h.view('dog-breed')
     }
   }
-}
+},
+{
+  method: 'POST',
+  path: '/dog-breed',
+  options: {
+    handler: async (request, h) => {
+      return h.redirect('/microchipped')
+    }
+  }
+}]

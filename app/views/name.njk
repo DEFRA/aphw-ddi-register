@@ -24,22 +24,22 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    {{ govukInput({
-      label: {
-        text: "What is your name?",
-        classes: "govuk-label--l",
-        isPageHeading: false
-      },
-      id: "name",
-      name: "name"
-    }) }}
+    <form method="POST" action="/name" novalidate>
+      {{ govukInput({
+        label: {
+          text: "What is your name?",
+          classes: "govuk-label--l",
+          isPageHeading: false
+        },
+        id: "name",
+        name: "name"
+      }) }}
 
-    {{ govukButton({
-      text: "Continue",
-      href: "/address",
-      isStartButton: true
-    }) }}
-  </div>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </div>
+  </form>
 </div>
 
 {% endblock %}
