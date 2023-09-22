@@ -26,6 +26,12 @@ container:
   limitMemory: 100Mi
   limitCpu: 100m
   port: 3000
+  cookiePassword: who-likes-cookies-i-like-cookies-everybody-likes-cookies
+  imagePullPolicy: IfNotPresent
+  redisHostname: redis-hostname.default
+  redisPartition: bng-register-web
+  redisPassword: redis
+  redisPort: 6379
 
 ingress:
   class: nginx
