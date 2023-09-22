@@ -1,7 +1,7 @@
 environment: production
 environmentCode:
 name: dangerous-dogs-act
-namespace: dangerous-dogs
+namespace: ffc-techspike
 workstream: dangerous-dogs
 image: dangerous-dogs-act
 
