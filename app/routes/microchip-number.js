@@ -1,9 +1,12 @@
+const { setRegisterMicrochipNumber, getRegisterMicrochipNumber } = require('../session')
+
 module.exports = [{
   method: 'GET',
   path: '/microchip-number',
   options: {
     handler: async (request, h) => {
-      return h.view('microchip-number')
+      const microchipNumber = getRegisterMicrochipNumber(request)
+      return h.view('microchip-number', { microchipNumber })
     }
   }
 },
@@ -12,7 +15,9 @@ module.exports = [{
   path: '/microchip-number',
   options: {
     handler: async (request, h) => {
-      return h.redirect('/confirmation')
+      const microchipNumber = request.payload.microchipNumber
+      setRegisterMicrochipNumber(request, microchipNumber)
+      return h.redirect('/summary')
     }
   }
 }]

@@ -5,8 +5,8 @@ module.exports = [{
   path: '/address',
   options: {
     handler: async (request, h) => {
-      const address = getRegisterAddress(request)
-      return h.view('address', { address })
+      const addressLine1 = getRegisterAddress(request)
+      return h.view('address', { addressLine1 })
     }
   }
 },
@@ -15,8 +15,8 @@ module.exports = [{
   path: '/address',
   options: {
     handler: async (request, h) => {
-      const address = request.payload.address
-      setRegisterAddress(request, address)
+      const addressLine1 = request.payload.addressLine1
+      setRegisterAddress(request, addressLine1)
       return h.redirect('/dog-breed')
     }
   }

@@ -1,9 +1,12 @@
+const { setRegisterDogBreed, getRegisterDogBreed } = require('../session')
+
 module.exports = [{
   method: 'GET',
   path: '/dog-breed',
   options: {
     handler: async (request, h) => {
-      return h.view('dog-breed')
+      const dogBreed = getRegisterDogBreed(request)
+      return h.view('dog-breed', { dogBreed })
     }
   }
 },
@@ -12,6 +15,8 @@ module.exports = [{
   path: '/dog-breed',
   options: {
     handler: async (request, h) => {
+      const dogBreed = request.payload.dogbreed
+      setRegisterDogBreed(request, dogBreed)
       return h.redirect('/microchipped')
     }
   }

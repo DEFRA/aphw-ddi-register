@@ -9,7 +9,8 @@ const routes = [].concat(
   require('../routes/microchip-number'),
   require('../routes/healthy'),
   require('../routes/healthz'),
-  require('../routes/cookies')
+  require('../routes/cookies'),
+  require('../routes/summary')
 )
 
 module.exports = {

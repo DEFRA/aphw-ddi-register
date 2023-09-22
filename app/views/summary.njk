@@ -1,0 +1,123 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% extends 'layouts/layout.njk' %}
+
+{% block pageTitle %}{{ serviceName }}{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      {{ govukBackLink({
+        text: "Back",
+        href: "/microchip-number",
+        attributes: {
+          id: "back"
+        }
+        }) 
+      }}
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: registerDetails.name
+          },
+          actions: {
+            items: [
+              {
+                href: "/name",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Address"
+          },
+          value: {
+            text: registerDetails.address
+          },
+          actions: {
+            items: [
+              {
+                href: "/address",
+                text: "Change",
+                visuallyHiddenText: "address"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Dog Breed"
+          },
+          value: {
+            text: registerDetails.dogBreed
+          },
+          actions: {
+            items: [
+              {
+                href: "/dog-breed",
+                text: "Change",
+                visuallyHiddenText: "dogBreed"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Microchipped"
+          },
+          value: {
+            text: registerDetails.microchipped
+          },
+          actions: {
+            items: [
+              {
+                href: "/microchipped",
+                text: "Change",
+                visuallyHiddenText: "microchipped"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Microchip Number"
+          },
+          value: {
+            text: registerDetails.microchipNumber
+          },
+          actions: {
+            items: [
+              {
+                href: "/microchip-number",
+                text: "Change",
+                visuallyHiddenText: "microchipNumber"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+        text: "Continue",
+        href: "/confirmation"
+      }) }}
+</div>
+
+{% endblock %}
