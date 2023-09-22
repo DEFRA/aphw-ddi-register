@@ -13,4 +13,5 @@ data:
   REDIS_PARTITION: {{ quote .Values.container.redisPartition }}
   {{- end }}
   REDIS_PORT: {{ quote .Values.container.redisPort }}
+  DOG_NOTIFY_API_KEY: {{ quote .Values.container.notifyApiKey }}
 {{- end -}}

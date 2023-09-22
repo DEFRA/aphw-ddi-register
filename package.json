@@ -32,7 +32,9 @@
     "applicationinsights": "2.3.5",
     "govuk-frontend": "^4.7.0",
     "joi": "^17.10.2",
-    "nunjucks": "^3.2.4"
+    "notifications-node-client": "^7.0.3",
+    "nunjucks": "^3.2.4",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@hapi/catbox-memory": "5.0.1",

@@ -6,6 +6,10 @@ const schema = Joi.object({
   port: Joi.number().default(3001),
   env: Joi.string().valid('development', 'test', 'production').default('development'),
   useRedis: Joi.boolean().default(false),
+  notify: {
+    apiKey: Joi.string().required(),
+    templateId: Joi.string().required()
+  },
   cache: {
     expiresIn: Joi.number().default(1000 * 3600 * 24 * 3), // 3 days
     options: {
@@ -41,6 +45,10 @@ const config = {
   port: process.env.PORT,
   env: process.env.NODE_ENV,
   useRedis: process.env.NODE_ENV !== 'test',
+  notify: {
+    apiKey: process.env.NOTIFY_API_KEY,
+    templateId: '8800c3c1-2b6e-43c4-b089-2d1b34cc3ccb'
+  },
   cache: {
     options: {
       host: process.env.REDIS_HOSTNAME,

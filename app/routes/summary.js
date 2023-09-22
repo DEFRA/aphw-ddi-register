@@ -1,13 +1,13 @@
-const { getRegister } = require('../session')
+const { getRegister, getEmail } = require('../session')
 
 module.exports = {
   method: 'GET',
   path: '/summary',
   options: {
     handler: async (request, h) => {
+      const email = getEmail(request)
       const registerDetails = getRegister(request)
-      console.log(registerDetails)
-      return h.view('summary', { registerDetails })
+      return h.view('summary', { registerDetails, email })
     }
   }
 }

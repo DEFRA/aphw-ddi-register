@@ -8,7 +8,6 @@ module.exports = [{
   options: {
     handler: async (request, h) => {
       const name = getRegisterName(request)
-      console.log(name)
       return h.view('name', new ViewModel(name))
     }
   }
@@ -29,7 +28,7 @@ module.exports = [{
     handler: async (request, h) => {
       const name = request.payload.name
       setRegisterName(request, name)
-      return h.redirect('/address')
+      return h.redirect('/email')
     }
   }
 }]

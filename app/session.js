@@ -62,6 +62,14 @@ const setRegisterMicrochipNumber = (request, value) => {
   set(request, entries.register, keys.register.microchipNumber, value)
 }
 
+const getEmail = (request) => {
+  return get(request, entries.register, keys.email)
+}
+
+const setEmail = (request, value) => {
+  set(request, entries.register, keys.email, value)
+}
+
 module.exports = {
   getRegister,
   setRegister,
@@ -74,5 +82,7 @@ module.exports = {
   getRegisterMicrochipped,
   setRegisterMicrochipped,
   getRegisterMicrochipNumber,
-  setRegisterMicrochipNumber
+  setRegisterMicrochipNumber,
+  getEmail,
+  setEmail
 }

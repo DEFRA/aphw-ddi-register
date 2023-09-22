@@ -5,5 +5,6 @@ module.exports = {
     dogBreed: 'dogBreed',
     microchipped: 'microchipped',
     microchipNumber: 'microchipNumber'
-  }
+  },
+  email: 'email'
 }

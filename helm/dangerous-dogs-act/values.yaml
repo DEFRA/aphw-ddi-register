@@ -32,6 +32,7 @@ container:
   redisPartition: bng-register-web
   redisPassword: redis
   redisPort: 6379
+  notifyApiKey: notify-api-key
 
 ingress:
   class: nginx
