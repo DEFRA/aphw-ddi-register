@@ -29,7 +29,7 @@
 
 {% block bodyStart %}
   {% if cookiesPolicy and not cookiesPolicy.confirmed %}
-    {% include "./cookies/_cookie-banner.njk" %}
+    {% include "../cookies/_cookie-banner.njk" %}
   {% endif %}
 {% endblock %}
 
