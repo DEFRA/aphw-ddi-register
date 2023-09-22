@@ -1,5 +1,4 @@
 const path = require('path')
-
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -17,13 +16,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(?:s[ac]|c)ss$/i,
         use: [
+          'style-loader',
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              esModule: false,
-              publicPath: '../'
+              publicPath: '../',
+              esModule: false
             }
           },
           'css-loader',
@@ -31,40 +31,40 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: isDev,
+              sourceMap: true,
               sassOptions: {
-                outputStyle: isDev ? 'expanded' : 'compressed'
+                outputStyle: 'compressed'
               }
             }
           }
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|ico)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'images/[contenthash][ext]'
+          filename: 'images/[name][ext]'
         }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[contenthash][ext]'
+          filename: 'fonts/[name].[fullhash].[ext]'
         }
       }
     ]
   },
   output: {
-    filename: 'js/[contenthash].js',
-    path: path.resolve(__dirname, 'app/frontend/dist'),
-    publicPath: '/assets/'
+    filename: 'js/[name].[fullhash].js',
+    path: path.resolve(__dirname, 'app/dist'),
+    library: '[name]'
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       inject: false,
-      filename: '../../views/layouts/layout.njk',
+      filename: '../views/layouts/layout.njk',
       template: 'app/views/layouts/_layout.njk',
       chunks: ['core']
     }),
@@ -75,7 +75,7 @@ module.exports = {
       chunks: ['cookies']
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/[contenthash].css'
+      filename: 'css/[name].[fullhash].css'
     })
   ]
 }

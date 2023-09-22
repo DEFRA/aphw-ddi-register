@@ -8,3 +8,4 @@ helm/**/*.lock
 dist
 
 layout.njk
+_cookie-banner.njk
