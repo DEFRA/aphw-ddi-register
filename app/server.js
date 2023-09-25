@@ -1,6 +1,7 @@
 require('./insights').setup()
 const config = require('./config')
 const Hapi = require('@hapi/hapi')
+const { initialiseTables } = require('./storage')
 
 async function createServer () {
   const server = Hapi.Server({
@@ -23,6 +24,7 @@ async function createServer () {
   await server.register(require('./plugins/view-context'))
   await server.register(require('./plugins/cookies.js'))
   await server.register(require('./plugins/session-cache'))
+  await initialiseTables()
 
   return server
 }

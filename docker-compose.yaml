@@ -8,8 +8,17 @@ services:
     environment:
       APPINSIGHTS_CLOUDROLE: dangerous-dogs-act-local
       APPINSIGHTS_CONNECTIONSTRING: ${APPINSIGHTS_CONNECTIONSTRING}
+      AZURE_STORAGE_USE_CONNECTION_STRING: "true"
+      AZURE_STORAGE_CONNECTION_STRING: DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;TableEndpoint=http://dangerous-dogs-act-azurite:10002/devstoreaccount1;
+      AZURE_STORAGE_ACCOUNT_NAME: devstoreaccount1
       COOKIE_PASSWORD: cookiecookiecookiecookiecookiecookie
+      NOTIFY_API_KEY: ${NOTIFY_API_KEY:-test}
       REDIS_HOSTNAME: redis
       REDIS_PORT: 6379
       REDIS_PASSWORD: ""
-      NOTIFY_API_KEY: ${NOTIFY_API_KEY:-test}
+
+  dangerous-dogs-act-azurite:
+    image: mcr.microsoft.com/azure-storage/azurite:3.23.0
+    command: "azurite --blobHost 0.0.0.0 --queueHost 0.0.0.0 --tableHost 0.0.0.0 --loose"
+    labels:
+      com.docker.compose.dangerous.dogs.act.role: dangerous-dogs-act-azurite
