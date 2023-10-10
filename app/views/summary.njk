@@ -31,7 +31,7 @@
             text: "Name"
           },
           value: {
-            text: registerDetails.name
+            text: model.name
           },
           actions: {
             items: [
@@ -48,7 +48,7 @@
             text: "Email"
           },
           value: {
-            text: email
+            text: model.email
           },
           actions: {
             items: [
@@ -65,7 +65,7 @@
             text: "Address"
           },
           value: {
-            text: registerDetails.address
+            html: model.address | join("<br>")
           },
           actions: {
             items: [
@@ -82,7 +82,7 @@
             text: "Dog Breed"
           },
           value: {
-            text: registerDetails.dogBreed
+            text: model.breed
           },
           actions: {
             items: [
@@ -99,7 +99,7 @@
             text: "Microchipped"
           },
           value: {
-            text: registerDetails.microchipped
+            text: model.microchipped
           },
           actions: {
             items: [
@@ -116,7 +116,7 @@
             text: "Microchip Number"
           },
           value: {
-            text: registerDetails.microchipNumber
+            text: model.microchipNumber
           },
           actions: {
             items: [
