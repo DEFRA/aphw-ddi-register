@@ -12,7 +12,7 @@ services:
       AZURE_STORAGE_CONNECTION_STRING: DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;TableEndpoint=http://dangerous-dogs-act-azurite:10002/devstoreaccount1;
       AZURE_STORAGE_ACCOUNT_NAME: devstoreaccount1
       COOKIE_PASSWORD: cookiecookiecookiecookiecookiecookie
-      NOTIFY_API_KEY: ${NOTIFY_API_KEY:-test}
+      NOTIFY_API_KEY: ${NOTIFY_API_KEY:-examplekey-644a2a30-7487-4e98-a908-b5ecd82d5225-644a2a30-7487-4e98-a908-b5ecd82d5225}
       NOTIFY_TEMPLATE_ID_LOGIN: ${NOTIFY_TEMPLATE_ID_LOGIN:-b36a429b-1d0b-4a96-a13a-25416963e9c3}
       SERVICE_URI: http://localhost:3000
       REDIS_HOSTNAME: redis
