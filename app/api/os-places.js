@@ -1,3 +1,4 @@
+const config = require('../config/index')
 const wreck = require('@hapi/wreck')
 
 const baseUrl = 'https://api.os.uk/search/places/v1'
@@ -5,7 +6,7 @@ const postcodeEndpoint = 'postcode'
 
 const options = {
   headers: {
-    key: process.env.OS_PLACES_API_KEY
+    key: config.places.apiKey
   },
   json: true
 }

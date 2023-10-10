@@ -10,6 +10,9 @@ const schema = Joi.object({
     apiKey: Joi.string().required(),
     templateId: Joi.string().required()
   },
+  places: {
+    apiKey: Joi.string().required()
+  },
   cache: {
     expiresIn: Joi.number().default(1000 * 3600 * 24 * 3), // 3 days
     options: {
@@ -48,6 +51,9 @@ const config = {
   notify: {
     apiKey: process.env.NOTIFY_API_KEY,
     templateId: '8800c3c1-2b6e-43c4-b089-2d1b34cc3ccb'
+  },
+  places: {
+    apiKey: process.env.OS_PLACES_API_KEY
   },
   cache: {
     options: {
