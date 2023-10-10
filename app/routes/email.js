@@ -28,7 +28,7 @@ module.exports = [{
     handler: async (request, h) => {
       const email = request.payload.email
       setEmail(request, email)
-      return h.redirect('/address')
+      return h.redirect('/postcode')
     }
   }
 }]
