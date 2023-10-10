@@ -1,4 +1,5 @@
 const Joi = require('joi')
+const notifyConfig = require('./notify')
 
 // Define config schema
 const schema = Joi.object({
@@ -6,10 +7,7 @@ const schema = Joi.object({
   port: Joi.number().default(3001),
   env: Joi.string().valid('development', 'test', 'production').default('development'),
   useRedis: Joi.boolean().default(false),
-  notify: {
-    apiKey: Joi.string().required(),
-    templateId: Joi.string().required()
-  },
+  serviceUri: Joi.string().uri(),
   cache: {
     expiresIn: Joi.number().default(1000 * 3600 * 24 * 3), // 3 days
     options: {
@@ -23,6 +21,7 @@ const schema = Joi.object({
   cookie: {
     cookieNameCookiePolicy: Joi.string().default('dangerous_dog_act_cookie_policy'),
     cookieNameSession: Joi.string().default('dangerous_dog_act_session'),
+    cookieNameAuth: Joi.string().default('dangerous_dog_act_session_auth'),
     isSameSite: Joi.string().default('Lax'),
     isSecure: Joi.boolean().default(true),
     password: Joi.string().min(32).required(),
@@ -35,7 +34,8 @@ const schema = Joi.object({
     isSecure: Joi.bool().default(true),
     isHttpOnly: Joi.bool().default(true),
     clearInvalid: Joi.bool().default(false),
-    strictHeader: Joi.bool().default(true)
+    strictHeader: Joi.bool().default(true),
+    path: Joi.string().default('/')
   })
 })
 
@@ -45,10 +45,7 @@ const config = {
   port: process.env.PORT,
   env: process.env.NODE_ENV,
   useRedis: process.env.NODE_ENV !== 'test',
-  notify: {
-    apiKey: process.env.NOTIFY_API_KEY,
-    templateId: '8800c3c1-2b6e-43c4-b089-2d1b34cc3ccb'
-  },
+  serviceUri: process.env.SERVICE_URI,
   cache: {
     options: {
       host: process.env.REDIS_HOSTNAME,
@@ -58,6 +55,7 @@ const config = {
     }
   },
   cookie: {
+    cookieNameAuth: 'dangerous_dog_act_session_auth',
     cookieNameCookiePolicy: 'dangerous_dog_act_cookie_policy',
     cookieNameSession: 'dangerous_dog_act_session',
     isSameSite: 'Lax',
@@ -99,5 +97,7 @@ value.catboxOptions = {
   tls: value.isProd ? {} : undefined,
   partition: value.redisPartition
 }
+
+value.notify = notifyConfig
 
 module.exports = value

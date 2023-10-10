@@ -13,6 +13,8 @@ services:
       AZURE_STORAGE_ACCOUNT_NAME: devstoreaccount1
       COOKIE_PASSWORD: cookiecookiecookiecookiecookiecookie
       NOTIFY_API_KEY: ${NOTIFY_API_KEY:-test}
+      NOTIFY_TEMPLATE_ID_LOGIN: ${NOTIFY_TEMPLATE_ID_LOGIN:-b36a429b-1d0b-4a96-a13a-25416963e9c3}
+      SERVICE_URI: http://localhost:3000
       REDIS_HOSTNAME: redis
       REDIS_PORT: 6379
       REDIS_PASSWORD: ""
