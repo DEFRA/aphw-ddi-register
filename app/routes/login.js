@@ -1,6 +1,5 @@
 const boom = require('@hapi/boom')
 const Joi = require('joi')
-const { validation } = require('../email/validation')
 const { sendLoginMagicLink } = require('../email/sendLoginMagicLink')
 
 const hintText = 'We\'ll use this to send you a link to register'
