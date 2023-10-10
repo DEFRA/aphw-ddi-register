@@ -1,13 +1,13 @@
 function ViewModel (value, error) {
   this.model = {
     label: {
-      text: 'Postcode',
+      text: 'Postcode'
     },
     id: 'postcode',
     name: 'postcode',
     classes: 'govuk-input--width-10',
     value,
-    autocomplete: "postcode"
+    autocomplete: 'postcode'
   }
 
   if (error) {

@@ -94,5 +94,5 @@ module.exports = {
   getRegisterMicrochipNumber,
   setRegisterMicrochipNumber,
   getEmail,
-  setEmail,
+  setEmail
 }

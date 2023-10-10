@@ -6,7 +6,7 @@ const errorMessages = {
   postcode: 'Enter the postcode'
 }
 
-function ViewModel(address, errors) {
+function ViewModel (address, errors) {
   this.model = {
     addressLine1: {
       id: 'addressLine1',
@@ -15,7 +15,7 @@ function ViewModel(address, errors) {
         text: 'Address Line 1'
       },
       value: address?.addressLine1,
-      autocomplete: "address-line1"
+      autocomplete: 'address-line1'
     },
     addressLine2: {
       id: 'addressLine2',
@@ -24,7 +24,7 @@ function ViewModel(address, errors) {
         text: 'Address Line 2 (optional)'
       },
       value: address?.addressLine2,
-      autocomplete: "address-line1"
+      autocomplete: 'address-line1'
     },
     town: {
       id: 'town',
@@ -33,7 +33,7 @@ function ViewModel(address, errors) {
         text: 'Town or city'
       },
       value: address?.town,
-      autocomplete: "address-level2"
+      autocomplete: 'address-level2'
     },
     county: {
       id: 'county',
@@ -42,7 +42,7 @@ function ViewModel(address, errors) {
         text: 'County'
       },
       value: address?.county,
-      autocomplete: "addressCounty"
+      autocomplete: 'addressCounty'
     },
     postcode: {
       id: 'postcode',
@@ -51,7 +51,7 @@ function ViewModel(address, errors) {
         text: 'Postcode'
       },
       value: address?.postcode,
-      autocomplete: "postal-code"
+      autocomplete: 'postal-code'
     },
     errors: []
   }

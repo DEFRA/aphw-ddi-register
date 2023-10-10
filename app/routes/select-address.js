@@ -11,7 +11,7 @@ module.exports = [
       const postcode = getRegisterAddressPostcode(request)
 
       const addresses = await getPostcodeAddresses(postcode)
-      
+
       request.yar.set('addresses', addresses)
 
       return h.view('select-address', new ViewModel(postcode, addresses))
@@ -28,7 +28,7 @@ module.exports = [
         failAction: async (request, h, error) => {
           const postcode = getRegisterAddressPostcode(request)
           const addresses = request.yar.get('addresses')
-  
+
           return h.view('select-address', new ViewModel(postcode, addresses, error)).code(400).takeover()
         }
       },
@@ -48,5 +48,5 @@ module.exports = [
         return h.redirect('/address')
       }
     }
-  },
+  }
 ]

@@ -1,4 +1,4 @@
-function ViewModel(postcode, addresses = [], error) {
+function ViewModel (postcode, addresses = [], error) {
   const defaultOption = {
     text: `${addresses.length} addresses found`,
     value: -1
@@ -13,14 +13,14 @@ function ViewModel(postcode, addresses = [], error) {
     postcode,
     results: {
       label: {
-        text: "Select an address"
+        text: 'Select an address'
       },
-      id: "addresses",
-      name: "address",
+      id: 'addresses',
+      name: 'address',
       items
     }
   }
-    
+
   if (error) {
     this.model.results.errorMessage = {
       text: 'Select an address.'

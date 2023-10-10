@@ -16,7 +16,7 @@ services:
       REDIS_HOSTNAME: redis
       REDIS_PORT: 6379
       REDIS_PASSWORD: ""
-      OS_PLACES_API_KEY: ${DDA_OS_PLACES_API_KEY}
+      OS_PLACES_API_KEY: ${OS_PLACES_API_KEY}
 
   dangerous-dogs-act-azurite:
     image: mcr.microsoft.com/azure-storage/azurite:3.23.0

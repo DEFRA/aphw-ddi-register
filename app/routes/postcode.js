@@ -33,5 +33,5 @@ module.exports = [
         return h.redirect('/select-address')
       }
     }
-  },
+  }
 ]
