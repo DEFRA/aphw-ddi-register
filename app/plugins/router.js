@@ -11,7 +11,9 @@ const routes = [].concat(
   require('../routes/healthz'),
   require('../routes/cookies'),
   require('../routes/summary'),
-  require('../routes/email')
+  require('../routes/email'),
+  require('../routes/login'),
+  require('../routes/verify-login')
 )
 
 module.exports = {

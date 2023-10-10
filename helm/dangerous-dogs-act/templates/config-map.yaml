@@ -14,7 +14,9 @@ data:
   {{- end }}
   REDIS_PORT: {{ quote .Values.container.redisPort }}
   NOTIFY_API_KEY: {{ quote .Values.container.notifyApiKey }}
+  NOTIFY_TEMPLATE_ID_LOGIN: {{ quote .Values.container.notifyTemplateIdLogin }}
   AZURE_STORAGE_CONNECTION_STRING: {{ quote .Values.container.azureStorageConnectionString }}
   AZURE_STORAGE_USE_CONNECTION_STRING: {{ quote .Values.container.azureStorageUseConnectionString }}
   AZURE_STORAGE_ACCOUNT_NAME: {{ quote .Values.container.azureStorageAccountName }}
+  SERVICE_URI: {{ quote .Values.container.serviceUri }}
 {{- end -}}
