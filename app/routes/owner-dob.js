@@ -36,7 +36,6 @@ module.exports = [{
   options: {
     handler: async (request, h) => {
       const dob = getRegisterOwnerDob(request)
-      console.log(dob)
       return h.view('owner-dob', new ViewModel(dob))
     }
   }
@@ -52,7 +51,6 @@ module.exports = [{
         year: Joi.number().required()
       }).custom(dobValidate),
       failAction: async (request, h, error) => {
-        console.log(error)
         setRegisterOwnerDob(request, request.payload)
         const name = getRegisterOwnerDob(request)
         return h.view('owner-dob', new ViewModel(name, error)).code(400).takeover()
