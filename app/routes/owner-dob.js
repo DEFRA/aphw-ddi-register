@@ -7,11 +7,11 @@ const dobValidate = (value, helper) => {
   const options = {
     locale: 'enGB'
   }
-  
+
   const dob = `${value.year}-${value.month}-${value.day}`
 
   const today = startOfDay(new Date())
-  const parsedDob = parse(dob, 'yyyy-mm-dd', new Date(), options)
+  const parsedDob = parse(dob, 'yyyy-MM-dd', new Date(), options)
 
   if (!isValid(parsedDob)) {
     return helper.message('Enter a valid date of birth.')
