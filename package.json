@@ -1,6 +1,6 @@
 {
   "name": "dangerous-dogs-act",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Web service to allow registration of owned dangerous dogs",
   "homepage": "https://github.com/DEFRA/dangerous-dogs-act",
   "main": "app/index.js",
