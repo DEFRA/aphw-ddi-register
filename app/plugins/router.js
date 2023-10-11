@@ -3,7 +3,6 @@ const routes = [].concat(
   require('../routes/index'),
   require('../routes/name'),
   require('../routes/address'),
-  require('../routes/dog-breed'),
   require('../routes/confirmation'),
   require('../routes/microchipped'),
   require('../routes/microchip-number'),

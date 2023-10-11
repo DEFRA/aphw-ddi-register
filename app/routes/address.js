@@ -28,7 +28,7 @@ module.exports = [{
     handler: async (request, h) => {
       const addressLine1 = request.payload.addressLine1
       setRegisterAddress(request, addressLine1)
-      return h.redirect('/dog-breed')
+      return h.redirect('/owner-dob')
     }
   }
 }]
