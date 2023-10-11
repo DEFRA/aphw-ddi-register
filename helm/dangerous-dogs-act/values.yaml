@@ -33,6 +33,7 @@ container:
   redisPassword: redis
   redisPort: 6379
   notifyApiKey: notify-api-key
+  osPlacesApiKey: os-places-api-key
   azureStorageConnectionString: dummy
   azureStorageUseConnectionString: false
   azureStorageAccountName: dangerousdogsact

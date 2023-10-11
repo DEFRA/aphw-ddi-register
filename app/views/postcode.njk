@@ -1,0 +1,34 @@
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends '_layout.njk' %}
+
+{% block pageTitle %}{{ serviceName }}{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">   
+    {% call govukFieldset({
+      legend: {
+        text: "What is your postcode?",
+        classes: "govuk-fieldset__legend--l",
+        isPageHeading: true
+      }
+    }) %}
+
+      <form method="post" novalidate>
+        {{ govukInput(model) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    
+    {% endcall %}
+    
+  </div>
+</div>
+
+{% endblock %}

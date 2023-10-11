@@ -7,8 +7,8 @@ module.exports = [{
   path: '/address',
   options: {
     handler: async (request, h) => {
-      const addressLine1 = getRegisterAddress(request)
-      return h.view('address', new ViewModel(addressLine1))
+      const address = getRegisterAddress(request)
+      return h.view('address', new ViewModel(address))
     }
   }
 },
@@ -17,17 +17,23 @@ module.exports = [{
   path: '/address',
   options: {
     validate: {
+      options: {
+        abortEarly: false
+      },
       payload: Joi.object({
-        addressLine1: Joi.string().required()
+        addressLine1: Joi.string().required(),
+        addressLine2: Joi.string().allow(null).allow(''),
+        town: Joi.string().required(),
+        county: Joi.string().allow(null).allow(''),
+        postcode: Joi.string().required()
       }),
       failAction: async (request, h, error) => {
-        const addressLine1 = getRegisterAddress(request)
-        return h.view('address', new ViewModel(addressLine1, error)).code(400).takeover()
+        const address = getRegisterAddress(request)
+        return h.view('address', new ViewModel(address, error)).code(400).takeover()
       }
     },
     handler: async (request, h) => {
-      const addressLine1 = request.payload.addressLine1
-      setRegisterAddress(request, addressLine1)
+      setRegisterAddress(request, request.payload)
       return h.redirect('/dog-breed')
     }
   }
