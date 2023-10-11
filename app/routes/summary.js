@@ -8,7 +8,7 @@ module.exports = {
     handler: async (request, h) => {
       const email = getEmail(request)
       const registerDetails = getRegister(request)
-      
+
       return h.view('summary', new ViewModel(email, registerDetails))
     }
   }
