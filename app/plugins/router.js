@@ -2,6 +2,7 @@ const routes = [].concat(
   require('../routes/assets'),
   require('../routes/index'),
   require('../routes/name'),
+  require('../routes/owner-dob'),
   require('../routes/postcode'),
   require('../routes/select-address'),
   require('../routes/address'),
