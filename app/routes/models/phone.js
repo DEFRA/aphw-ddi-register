@@ -7,9 +7,9 @@ function ViewModel (value, error) {
     },
     id: 'phone',
     name: 'phone',
-    type: "tel",
-    autocomplete: "tel",
-    classes: "govuk-input--width-20",
+    type: 'tel',
+    autocomplete: 'tel',
+    classes: 'govuk-input--width-20',
     value
   }
 
