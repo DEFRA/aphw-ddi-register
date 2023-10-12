@@ -34,6 +34,14 @@ const setDogDob = (request, value) => {
   set(request, dog.entry, dog.name, value)
 }
 
+const getDogColour = (request) => {
+  return get(request, dog.entry, dog.colour)
+}
+
+const setDogColour = (request, value) => {
+  set(request, dog.entry, dog.colour, value)
+}
+
 const getDogMicrochipped = (request) => {
   return get(request, dog.entry, dog.microchipped)
 }
@@ -57,6 +65,8 @@ module.exports = {
   setDogName,
   getDogDob,
   setDogDob,
+  getDogColour,
+  setDogColour,
   getDogMicrochipped,
   setDogMicrochipped,
   getDogMicrochipNumber,

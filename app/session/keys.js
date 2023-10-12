@@ -12,6 +12,7 @@ const dog = {
   dogBreed: 'dogBreed',
   name: 'name',
   dogDob: 'dogDob',
+  colour: 'colour',
   microchipped: 'microchipped',
   microchipNumber: 'microchipNumber'
 }
