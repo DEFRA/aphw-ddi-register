@@ -30,6 +30,14 @@ const setRegisterName = (request, value) => {
   set(request, entries.register, keys.register.name, value)
 }
 
+const getRegisterOwnerDob = (request) => {
+  return get(request, entries.register, keys.register.ownerDob)
+}
+
+const setRegisterOwnerDob = (request, value) => {
+  set(request, entries.register, keys.register.ownerDob, value)
+}
+
 const getRegisterAddress = (request) => {
   return get(request, entries.register, keys.register.address)
 }
@@ -91,6 +99,8 @@ module.exports = {
   setRegister,
   getRegisterName,
   setRegisterName,
+  getRegisterOwnerDob,
+  setRegisterOwnerDob,
   getRegisterAddress,
   setRegisterAddress,
   getRegisterAddressPostcode,
