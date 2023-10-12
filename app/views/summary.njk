@@ -33,7 +33,7 @@
             text: "Name"
           },
           value: {
-            text: model.name
+            text: model.register.name
           },
           actions: {
             items: [
@@ -50,7 +50,7 @@
             text: "Email"
           },
           value: {
-            text: model.email
+            text: model.register.email
           },
           actions: {
             items: [
@@ -67,7 +67,7 @@
             text: "Address"
           },
           value: {
-            html: model.address | join("<br>")
+            html: model.register.address | join("<br>")
           },
           actions: {
             items: [
@@ -75,6 +75,40 @@
                 href: "/address",
                 text: "Change",
                 visuallyHiddenText: "address"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            text: model.register.dob
+          },
+          actions: {
+            items: [
+              {
+                href: "/owner-dob",
+                text: "Change",
+                visuallyHiddenText: "Date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Telephone"
+          },
+          value: {
+            text: model.register.phone
+          },
+          actions: {
+            items: [
+              {
+                href: "/phone",
+                text: "Change",
+                visuallyHiddenText: "Telephone number"
               }
             ]
           }
@@ -88,10 +122,78 @@
       rows: [
         {
           key: {
+            text: "Name"
+          },
+          value: {
+            text: model.dog.name
+          },
+          actions: {
+            items: [
+              {
+                href: "/dog-name",
+                text: "Change",
+                visuallyHiddenText: "Dog name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            text: model.dog.dob
+          },
+          actions: {
+            items: [
+              {
+                href: "/dog-dob",
+                text: "Change",
+                visuallyHiddenText: "Dog date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Colour"
+          },
+          value: {
+            text: model.dog.colour
+          },
+          actions: {
+            items: [
+              {
+                href: "/dog-colour",
+                text: "Change",
+                visuallyHiddenText: "Dog colour"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Gender"
+          },
+          value: {
+            text: model.dog.gender
+          },
+          actions: {
+            items: [
+              {
+                href: "/dog-gender",
+                text: "Change",
+                visuallyHiddenText: "Dog gender"
+              }
+            ]
+          }
+        },
+        {
+          key: {
             text: "Microchipped"
           },
           value: {
-            text: model.microchipped
+            text: model.dog.microchipped
           },
           actions: {
             items: [
@@ -108,7 +210,7 @@
             text: "Microchip Number"
           },
           value: {
-            text: model.microchipNumber
+            text: model.dog.microchipNumber
           },
           actions: {
             items: [
@@ -116,6 +218,23 @@
                 href: "/microchip-number",
                 text: "Change",
                 visuallyHiddenText: "microchipNumber"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Preference"
+          },
+          value: {
+            text: model.dog.preference
+          },
+          actions: {
+            items: [
+              {
+                href: "/preference",
+                text: "Change",
+                visuallyHiddenText: "preference"
               }
             ]
           }

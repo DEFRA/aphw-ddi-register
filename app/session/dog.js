@@ -27,11 +27,11 @@ const setDogName = (request, value) => {
 }
 
 const getDogDob = (request) => {
-  return get(request, dog.entry, dog.name)
+  return get(request, dog.entry, dog.dogDob)
 }
 
 const setDogDob = (request, value) => {
-  set(request, dog.entry, dog.name, value)
+  set(request, dog.entry, dog.dogDob, value)
 }
 
 const getDogColour = (request) => {
