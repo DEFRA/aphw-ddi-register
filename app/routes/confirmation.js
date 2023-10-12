@@ -1,5 +1,6 @@
 const sendEmail = require('../notify')
-const { getRegister, getEmail } = require('../session/register')
+const { getRegister } = require('../session/register')
+const { getDog } = require('../session/dog')
 const { createRow } = require('../storage')
 const createRegistrationNumber = require('../create-registration-number')
 
@@ -8,12 +9,14 @@ module.exports = {
   path: '/confirmation',
   options: {
     handler: async (request, h) => {
-      const email = getEmail(request)
-      const registerDetails = getRegister(request)
+      const registerDetails = {
+        register: getRegister(request),
+        dog: getDog(request)
+      }
       const registrationNumber = createRegistrationNumber()
       registerDetails.registrationNumber = registrationNumber
-      await sendEmail(email, registerDetails)
-      await createRow(registerDetails.dogBreed, registrationNumber, registerDetails)
+      await sendEmail(registerDetails.register.email, { registrationNumber })
+      await createRow('XL Bully', registrationNumber, registerDetails)
 
       return h.view('confirmation', { registrationNumber })
     }

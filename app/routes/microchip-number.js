@@ -28,7 +28,7 @@ module.exports = [{
     handler: async (request, h) => {
       const microchipNumber = request.payload.microchipNumber
       setDogMicrochipNumber(request, microchipNumber)
-      return h.redirect('/summary')
+      return h.redirect('/preference')
     }
   }
 }]

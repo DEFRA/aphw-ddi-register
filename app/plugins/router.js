@@ -7,7 +7,6 @@ const routes = [].concat(
   require('../routes/select-address'),
   require('../routes/address'),
   require('../routes/phone'),
-  require('../routes/dog-breed'),
   require('../routes/dog-name'),
   require('../routes/dog-dob'),
   require('../routes/dog-colour'),

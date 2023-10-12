@@ -5,8 +5,6 @@ const formatDate = date => {
 }
 
 function ViewModel (register, dog, error) {
-  console.log(dog)
-
   this.model = {
     register: {
       name: register?.name,
@@ -29,7 +27,6 @@ function ViewModel (register, dog, error) {
   const address = register?.address
 
   if (address !== null && address !== undefined) {
-    console.log(address)
     Object.keys(address).forEach(key => {
       if (address[key]) {
         this.model.register.address.push(address[key])
