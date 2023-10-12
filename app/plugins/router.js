@@ -15,6 +15,7 @@ const routes = [].concat(
   require('../routes/confirmation'),
   require('../routes/microchipped'),
   require('../routes/microchip-number'),
+  require('../routes/preference'),
   require('../routes/healthy'),
   require('../routes/healthz'),
   require('../routes/cookies'),

@@ -15,7 +15,8 @@ const dog = {
   colour: 'colour',
   gender: 'gender',
   microchipped: 'microchipped',
-  microchipNumber: 'microchipNumber'
+  microchipNumber: 'microchipNumber',
+  preference: 'preference'
 }
 
 module.exports = {
