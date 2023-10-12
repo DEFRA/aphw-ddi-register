@@ -34,7 +34,7 @@ module.exports = [{
     },
     handler: async (request, h) => {
       setRegisterAddress(request, request.payload)
-      return h.redirect('/dog-breed')
+      return h.redirect('/owner-dob')
     }
   }
 }]

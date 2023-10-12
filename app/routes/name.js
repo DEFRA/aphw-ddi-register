@@ -28,7 +28,7 @@ module.exports = [{
     handler: async (request, h) => {
       const name = request.payload.name
       setRegisterName(request, name)
-      return h.redirect('/email')
+      return h.redirect('/postcode')
     }
   }
 }]
