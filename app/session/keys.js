@@ -9,7 +9,6 @@ const register = {
 
 const dog = {
   entry: 'dog',
-  dogBreed: 'dogBreed',
   name: 'name',
   dogDob: 'dogDob',
   colour: 'colour',
