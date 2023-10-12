@@ -13,6 +13,7 @@ const dog = {
   name: 'name',
   dogDob: 'dogDob',
   colour: 'colour',
+  gender: 'gender',
   microchipped: 'microchipped',
   microchipNumber: 'microchipNumber'
 }

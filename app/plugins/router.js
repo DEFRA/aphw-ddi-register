@@ -11,6 +11,7 @@ const routes = [].concat(
   require('../routes/dog-name'),
   require('../routes/dog-dob'),
   require('../routes/dog-colour'),
+  require('../routes/dog-gender'),
   require('../routes/confirmation'),
   require('../routes/microchipped'),
   require('../routes/microchip-number'),
