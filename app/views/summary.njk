@@ -24,6 +24,8 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Owner</h2>
+
     {{ govukSummaryList({
       rows: [
         {
@@ -76,24 +78,14 @@
               }
             ]
           }
-        },
-        {
-          key: {
-            text: "Dog Breed"
-          },
-          value: {
-            text: model.breed
-          },
-          actions: {
-            items: [
-              {
-                href: "/dog-breed",
-                text: "Change",
-                visuallyHiddenText: "dogBreed"
-              }
-            ]
-          }
-        },
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Dog</h2>
+
+    {{ govukSummaryList({
+      rows: [
         {
           key: {
             text: "Microchipped"

@@ -1,5 +1,5 @@
 const Joi = require('joi')
-const { setEmail, getEmail } = require('../session')
+const { setEmail, getEmail } = require('../session/register')
 const ViewModel = require('./models/email')
 
 module.exports = [{

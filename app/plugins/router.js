@@ -8,6 +8,7 @@ const routes = [].concat(
   require('../routes/address'),
   require('../routes/phone'),
   require('../routes/dog-breed'),
+  require('../routes/dog-name'),
   require('../routes/confirmation'),
   require('../routes/microchipped'),
   require('../routes/microchip-number'),

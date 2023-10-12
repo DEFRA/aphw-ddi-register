@@ -1,5 +1,5 @@
 const Joi = require('joi')
-const { setRegisterDogBreed, getRegisterDogBreed } = require('../session')
+const { setRegisterDogBreed, getRegisterDogBreed } = require('../session/register')
 const ViewModel = require('./models/dog-breed')
 
 module.exports = [{

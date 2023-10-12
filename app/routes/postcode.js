@@ -1,5 +1,5 @@
 const Joi = require('joi')
-const { getRegisterAddressPostcode, setRegisterAddressPostcode } = require('../session')
+const { getRegisterAddressPostcode, setRegisterAddressPostcode } = require('../session/register')
 const ViewModel = require('./models/postcode')
 
 module.exports = [

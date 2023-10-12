@@ -1,5 +1,5 @@
 const Joi = require('joi')
-const { setRegisterMicrochipped, getRegisterMicrochipped } = require('../session')
+const { getDogMicrochipped, setDogMicrochipped } = require('../session/dog')
 const ViewModel = require('./models/microchipped')
 
 module.exports = [{
@@ -7,7 +7,7 @@ module.exports = [{
   path: '/microchipped',
   options: {
     handler: async (request, h) => {
-      const microchipped = getRegisterMicrochipped(request)
+      const microchipped = getDogMicrochipped(request)
       return h.view('microchipped', new ViewModel(microchipped))
     }
   }
@@ -21,13 +21,13 @@ module.exports = [{
         microchipped: Joi.string().required()
       }),
       failAction: async (request, h, error) => {
-        const microchipped = getRegisterMicrochipped(request)
+        const microchipped = getDogMicrochipped(request)
         return h.view('microchipped', new ViewModel(microchipped, error)).code(400).takeover()
       }
     },
     handler: async (request, h) => {
       const microchipped = request.payload.microchipped
-      setRegisterMicrochipped(request, microchipped)
+      setDogMicrochipped(request, microchipped)
       return h.redirect('/microchip-number')
     }
   }

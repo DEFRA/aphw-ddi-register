@@ -1,4 +1,5 @@
-const { getRegister, getEmail } = require('../session')
+const { getRegister } = require('../session/register')
+const { getDog } = require('../session/dog')
 const ViewModel = require('./models/summary')
 
 module.exports = {
@@ -6,10 +7,10 @@ module.exports = {
   path: '/summary',
   options: {
     handler: async (request, h) => {
-      const email = getEmail(request)
       const registerDetails = getRegister(request)
+      const dog = getDog(request)
 
-      return h.view('summary', new ViewModel(email, registerDetails))
+      return h.view('summary', new ViewModel(registerDetails, dog))
     }
   }
 }

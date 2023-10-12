@@ -1,5 +1,5 @@
 const Joi = require('joi')
-const { setRegisterAddress, getRegisterAddress } = require('../session')
+const { setRegisterAddress, getRegisterAddress } = require('../session/register')
 const ViewModel = require('./models/address')
 
 module.exports = [{

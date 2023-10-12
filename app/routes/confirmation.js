@@ -1,5 +1,5 @@
 const sendEmail = require('../notify')
-const { getRegister, getEmail } = require('../session')
+const { getRegister, getEmail } = require('../session/register')
 const { createRow } = require('../storage')
 const createRegistrationNumber = require('../create-registration-number')
 
