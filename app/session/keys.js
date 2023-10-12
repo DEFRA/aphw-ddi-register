@@ -2,6 +2,7 @@ const register = {
   entry: 'register',
   name: 'name',
   ownerDob: 'ownerDob',
+  phone: 'phone',
   address: 'address',
   email: 'email'
 }

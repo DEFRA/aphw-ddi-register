@@ -1,6 +1,6 @@
 const Joi = require('joi')
 const { startOfDay, parse, isAfter, isValid, differenceInYears } = require('date-fns')
-const { getRegisterOwnerDob, setRegisterOwnerDob } = require('../session')
+const { getRegisterOwnerDob, setRegisterOwnerDob } = require('../session/register')
 const ViewModel = require('./models/owner-dob')
 
 const dobValidate = (value, helper) => {

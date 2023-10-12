@@ -1,5 +1,5 @@
 const Joi = require('joi')
-const { getRegisterPhoneNumber, setRegisterPhoneNumber } = require('../session')
+const { getRegisterPhoneNumber, setRegisterPhoneNumber } = require('../session/register')
 const { isValidPhoneNumber } = require('libphonenumber-js')
 const ViewModel = require('./models/phone.js')
 
@@ -39,7 +39,7 @@ module.exports = [
 
         setRegisterPhoneNumber(request, phone)
 
-        return h.redirect('/')
+        return h.redirect('/email')
       }
     }
   }

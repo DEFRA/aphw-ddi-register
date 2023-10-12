@@ -18,7 +18,7 @@ const dobValidate = (value, helper) => {
   }
 
   if (isAfter(parsedDob, today)) {
-    return helper.message('Your date of birth must be in the past')
+    return helper.message('Your dog\'s date of birth must be in the past')
   }
 
   return value
@@ -46,7 +46,7 @@ module.exports = [{
       }).custom(dobValidate),
       failAction: async (request, h, error) => {
         setDogDob(request, request.payload)
-        const name = getRegisterOwnerDob(request)
+        const name = getDogDob(request)
         return h.view('dog-dob', new ViewModel(name, error)).code(400).takeover()
       }
     },
