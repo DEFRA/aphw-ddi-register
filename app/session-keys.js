@@ -4,7 +4,8 @@ module.exports = {
     address: 'address',
     dogBreed: 'dogBreed',
     microchipped: 'microchipped',
-    microchipNumber: 'microchipNumber'
+    microchipNumber: 'microchipNumber',
+    phone: 'phoneNumber'
   },
   email: 'email'
 }

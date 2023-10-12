@@ -78,6 +78,14 @@ const setRegisterAddressPostcode = (request, value) => {
   set(request, entries.register, keys.register.address, value)
 }
 
+const getRegisterPhoneNumber = (request) => {
+  return get(request, entries.register, keys.register.phone)
+}
+
+const setRegisterPhoneNumber = (request, value) => {
+  set(request, entries.register, keys.register.phone, value)
+}
+
 module.exports = {
   getRegister,
   setRegister,
@@ -93,6 +101,8 @@ module.exports = {
   setRegisterMicrochipped,
   getRegisterMicrochipNumber,
   setRegisterMicrochipNumber,
+  getRegisterPhoneNumber,
+  setRegisterPhoneNumber,
   getEmail,
   setEmail
 }

@@ -5,6 +5,7 @@ const routes = [].concat(
   require('../routes/postcode'),
   require('../routes/select-address'),
   require('../routes/address'),
+  require('../routes/phone'),
   require('../routes/dog-breed'),
   require('../routes/confirmation'),
   require('../routes/microchipped'),
