@@ -22,4 +22,4 @@ const dog = {
 module.exports = {
   register,
   dog
-};
+}

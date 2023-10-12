@@ -1,13 +1,12 @@
 const formatDate = date => {
-  if (date === null || date === undefined)
-    return date
+  if (date === null || date === undefined) { return date }
 
   return `${date.day}/${date.month}/${date.year}`
 }
 
-function ViewModel(register, dog, error) {
+function ViewModel (register, dog, error) {
   console.log(dog)
-  
+
   this.model = {
     register: {
       name: register?.name,
