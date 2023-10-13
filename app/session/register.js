@@ -1,4 +1,4 @@
-const { register } = require('./keys')
+const { keys } = require('../constants/register')
 
 const set = (request, entryKey, key, value) => {
   const entryValue = request.yar?.get(entryKey) || {}
@@ -11,59 +11,59 @@ const get = (request, entryKey, key) => {
 }
 
 const getRegister = (request) => {
-  return get(request, register.entry)
+  return get(request, keys.entry)
 }
 
 const setRegister = (request, value) => {
-  set(request, register.entry, value)
+  set(request, keys.entry, value)
 }
 
 const getRegisterName = (request) => {
-  return get(request, register.entry, register.name)
+  return get(request, keys.entry, keys.name)
 }
 
 const setRegisterName = (request, value) => {
-  set(request, register.entry, register.name, value)
+  set(request, keys.entry, keys.name, value)
 }
 
 const getRegisterOwnerDob = (request) => {
-  return get(request, register.entry, register.ownerDob)
+  return get(request, keys.entry, keys.dateOfBirth)
 }
 
 const setRegisterOwnerDob = (request, value) => {
-  set(request, register.entry, register.ownerDob, value)
+  set(request, keys.entry, keys.dateOfBirth, value)
 }
 
 const getRegisterAddress = (request) => {
-  return get(request, register.entry, register.address)
+  return get(request, keys.entry, keys.address)
 }
 
 const setRegisterAddress = (request, value) => {
-  set(request, register.entry, register.address, value)
+  set(request, keys.entry, keys.address, value)
 }
 
 const getEmail = (request) => {
-  return get(request, register.entry, register.email)
+  return get(request, keys.entry, keys.email)
 }
 
 const setEmail = (request, value) => {
-  set(request, register.entry, register.email, value)
+  set(request, keys.entry, keys.email, value)
 }
 
 const getRegisterAddressPostcode = (request) => {
-  return get(request, register.entry, register.address)?.postcode
+  return get(request, keys.entry, keys.address)?.postcode
 }
 
 const setRegisterAddressPostcode = (request, value) => {
-  set(request, register.entry, register.address, value)
+  set(request, keys.entry, keys.address, value)
 }
 
 const getRegisterPhoneNumber = (request) => {
-  return get(request, register.entry, register.phone)
+  return get(request, keys.entry, keys.phone)
 }
 
 const setRegisterPhoneNumber = (request, value) => {
-  set(request, register.entry, register.phone, value)
+  set(request, keys.entry, keys.phone, value)
 }
 
 module.exports = {

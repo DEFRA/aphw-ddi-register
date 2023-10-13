@@ -1,4 +1,4 @@
-const { dog } = require('./keys')
+const { keys } = require('../constants/dog')
 
 const set = (request, entryKey, key, value) => {
   const entryValue = request.yar?.get(entryKey) || {}
@@ -11,67 +11,67 @@ const get = (request, entryKey, key) => {
 }
 
 const getDog = (request) => {
-  return get(request, dog.entry)
+  return get(request, keys.entry)
 }
 
 const setDog = (request, value) => {
-  set(request, dog.entry, value)
+  set(request, keys.entry, value)
 }
 
 const getDogName = (request) => {
-  return get(request, dog.entry, dog.name)
+  return get(request, keys.entry, keys.name)
 }
 
 const setDogName = (request, value) => {
-  set(request, dog.entry, dog.name, value)
+  set(request, keys.entry, keys.name, value)
 }
 
 const getDogDob = (request) => {
-  return get(request, dog.entry, dog.dogDob)
+  return get(request, keys.entry, keys.dogDob)
 }
 
 const setDogDob = (request, value) => {
-  set(request, dog.entry, dog.dogDob, value)
+  set(request, keys.entry, keys.dogDob, value)
 }
 
 const getDogColour = (request) => {
-  return get(request, dog.entry, dog.colour)
+  return get(request, keys.entry, keys.colour)
 }
 
 const setDogColour = (request, value) => {
-  set(request, dog.entry, dog.colour, value)
+  set(request, keys.entry, keys.colour, value)
 }
 
 const getDogGender = (request) => {
-  return get(request, dog.entry, dog.gender)
+  return get(request, keys.entry, keys.gender)
 }
 
 const setDogGender = (request, value) => {
-  set(request, dog.entry, dog.gender, value)
+  set(request, keys.entry, keys.gender, value)
 }
 
 const getDogMicrochipped = (request) => {
-  return get(request, dog.entry, dog.microchipped)
+  return get(request, keys.entry, keys.microchipped)
 }
 
 const setDogMicrochipped = (request, value) => {
-  set(request, dog.entry, dog.microchipped, value)
+  set(request, keys.entry, keys.microchipped, value)
 }
 
 const getDogMicrochipNumber = (request) => {
-  return get(request, dog.entry, dog.microchipNumber)
+  return get(request, keys.entry, keys.microchipNumber)
 }
 
 const setDogMicrochipNumber = (request, value) => {
-  set(request, dog.entry, dog.microchipNumber, value)
+  set(request, keys.entry, keys.microchipNumber, value)
 }
 
 const getDogPreference = (request) => {
-  return get(request, dog.entry, dog.preference)
+  return get(request, keys.entry, keys.preference)
 }
 
 const setDogPreference = (request, value) => {
-  set(request, dog.entry, dog.preference, value)
+  set(request, keys.entry, keys.preference, value)
 }
 
 module.exports = {
