@@ -1,4 +1,4 @@
-const ViewModel = require('./models/cookie-policy')
+const ViewModel = require('../models/cookie-policy')
 const { updatePolicy } = require('../cookies')
 const joi = require('joi')
 
