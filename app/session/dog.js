@@ -1,13 +1,26 @@
 const { keys } = require('../constants/dog')
 
+const calcDogIndex = (entry) => entry.length - 1
+
 const set = (request, entryKey, key, value) => {
-  const entryValue = request.yar?.get(entryKey) || {}
-  entryValue[key] = typeof (value) === 'string' ? value.trim() : value
+  const entryValue = request.yar?.get(entryKey) || [{}]
+
+  const dog = calcDogIndex(entryValue)
+
+  entryValue[dog][key] = typeof (value) === 'string' ? value.trim() : value
   request.yar.set(entryKey, entryValue)
 }
 
 const get = (request, entryKey, key) => {
-  return key ? request.yar?.get(entryKey)?.[key] : request.yar?.get(entryKey)
+  const entryValue = request.yar?.get(entryKey) ?? []
+
+  if (!key) {
+    return entryValue
+  }
+  
+  const dog = calcDogIndex(entryValue)
+
+  return entryValue?.[dog]?.[key]
 }
 
 const getDog = (request) => {
@@ -74,6 +87,14 @@ const setDogPreference = (request, value) => {
   set(request, keys.entry, keys.preference, value)
 }
 
+const addAnotherDog = (request) => {
+  const entryValue = request.yar?.get(keys.entry) || [{}]
+
+  entryValue.push({})
+
+  request.yar.set(keys.entry, entryValue)
+}
+
 module.exports = {
   getDog,
   setDog,
@@ -90,5 +111,6 @@ module.exports = {
   getDogMicrochipNumber,
   setDogMicrochipNumber,
   getDogPreference,
-  setDogPreference
+  setDogPreference,
+  addAnotherDog
 }

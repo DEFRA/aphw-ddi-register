@@ -1,12 +1,14 @@
 const { register: registerConstants, dog: dogConstants } = require('../../constants')
 
 const formatDate = date => {
-  if (date === null || date === undefined) { return date }
+  if (date === null || date === undefined) {
+    return date
+  }
 
   return `${date.day}/${date.month}/${date.year}`
 }
 
-function ViewModel (register, dog, error) {
+function ViewModel (register, dogs, error) {
   this.model = {
     formAction: registerConstants.routes.confirmation,
     summary: {
@@ -17,15 +19,16 @@ function ViewModel (register, dog, error) {
         email: register?.email,
         address: []
       },
-      dog: {
-        name: dog?.name,
-        dateOfBirth: formatDate(dog?.[dogConstants.keys.dateOfBirth]),
-        colour: dog?.[dogConstants.keys.colour],
-        gender: dog?.gender,
-        microchipped: dog?.microchipped,
-        microchipNumber: dog?.microchipNumber,
-        preference: dog?.preference
-      }
+      dogs: dogs.map((dog, index) => ({
+          id: index + 1,
+          name: dog?.name,
+          dateOfBirth: formatDate(dog?.[dogConstants.keys.dateOfBirth]),
+          colour: dog?.[dogConstants.keys.colour],
+          gender: dog?.gender,
+          microchipped: dog?.microchipped,
+          microchipNumber: dog?.microchipNumber,
+          preference: dog?.preference
+      }))
     }
   }
 
