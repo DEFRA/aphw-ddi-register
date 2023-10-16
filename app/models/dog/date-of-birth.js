@@ -37,16 +37,6 @@ function ViewModel(dob, errors) {
     this.model.dateOfBirth.errorMessage = {
       text: errors.output.payload.message
     }
-
-    for (const error of errors.details) {
-      const name = error.path[0]
-
-      const prop = this.model.items.find(item => item.name === name)
-
-      if (prop !== undefined) {
-        prop.classes += ' govuk-input--error'
-      }
-    }
   }
 }
 
