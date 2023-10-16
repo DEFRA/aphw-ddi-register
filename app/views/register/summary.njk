@@ -100,131 +100,73 @@
       ]
     }) }}
 
-    <h2 class="govuk-heading-m">Dog</h2>
+    <h2 class="govuk-heading-m">Dogs</h2>
 
-    {{ govukSummaryList({
-      rows: [
-        {
-          key: {
-            text: "Name"
+    {% for dog in model.summary.dogs %}
+      <h2 class="govuk-heading-m">{{ dog.name }}</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: dog.name
+            }
           },
-          value: {
-            text: model.summary.dog.name
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: dog.dateOfBirth
+            }
           },
-          actions: {
-            items: [
-              {
-                href: "/dog/name",
-                text: "Change",
-                visuallyHiddenText: "Dog name"
-              }
-            ]
+          {
+            key: {
+              text: "Colour"
+            },
+            value: {
+              text: dog.colour
+            }
+          },
+          {
+            key: {
+              text: "Gender"
+            },
+            value: {
+              text: dog.gender
+            }
+          },
+          {
+            key: {
+              text: "Microchipped"
+            },
+            value: {
+              text: dog.microchipped
+            }
+          },
+          {
+            key: {
+              text: "Microchip Number"
+            },
+            value: {
+              text: dog.microchipNumber
+            }
+          },
+          {
+            key: {
+              text: "Preference"
+            },
+            value: {
+              text: dog.preference
+            }
           }
-        },
-        {
-          key: {
-            text: "Date of birth"
-          },
-          value: {
-            text: model.summary.dog.dateOfBirth
-          },
-          actions: {
-            items: [
-              {
-                href: "/dog/date-of-birth",
-                text: "Change",
-                visuallyHiddenText: "Dog date of birth"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Colour"
-          },
-          value: {
-            text: model.summary.dog.colour
-          },
-          actions: {
-            items: [
-              {
-                href: "/dog/colour",
-                text: "Change",
-                visuallyHiddenText: "Dog colour"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Gender"
-          },
-          value: {
-            text: model.summary.dog.gender
-          },
-          actions: {
-            items: [
-              {
-                href: "/dog/gender",
-                text: "Change",
-                visuallyHiddenText: "Dog gender"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Microchipped"
-          },
-          value: {
-            text: model.summary.dog.microchipped
-          },
-          actions: {
-            items: [
-              {
-                href: "/dog/microchipped",
-                text: "Change",
-                visuallyHiddenText: "microchipped"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Microchip Number"
-          },
-          value: {
-            text: model.summary.dog.microchipNumber
-          },
-          actions: {
-            items: [
-              {
-                href: "/dog/microchip-number",
-                text: "Change",
-                visuallyHiddenText: "microchipNumber"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Preference"
-          },
-          value: {
-            text: model.summary.dog.preference
-          },
-          actions: {
-            items: [
-              {
-                href: "/dog/preference",
-                text: "Change",
-                visuallyHiddenText: "preference"
-              }
-            ]
-          }
-        }
-      ]
-    }) }}
+        ]
+      }) }}
+
+    {% endfor %}
 
     {{ govukButton({
         text: "Continue",

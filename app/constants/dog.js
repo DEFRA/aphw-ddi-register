@@ -6,7 +6,8 @@ const constants = {
     gender: '/dog/gender',
     microchipped: '/dog/microchipped',
     microchipNumber: '/dog/microchip-number',
-    preference: '/dog/preference'
+    preference: '/dog/preference',
+    addAnother: '/dog/add-another'
   },
   views: {
     name: 'dog/name',
@@ -15,10 +16,12 @@ const constants = {
     gender: 'dog/gender',
     microchipped: 'dog/microchipped',
     microchipNumber: 'dog/microchip-number',
-    preference: 'dog/preference'
+    preference: 'dog/preference',
+    addAnother: 'dog/add-another'
   },
   keys: {
-    entry: 'dog',
+    entry: 'dogs',
+    count: 'count',
     name: 'name',
     dateOfBirth: 'dateOfBirth',
     colour: 'colour',

@@ -12,8 +12,9 @@ function ViewModel(postcode, addresses = [], error) {
   })))
 
   this.model = {
-    formAction: register.routes.address,
+    formAction: register.routes.selectAddress,
     backLink: register.routes.postcode,
+    addressRoute: register.routes.address,
     postcode,
     results: {
       label: {

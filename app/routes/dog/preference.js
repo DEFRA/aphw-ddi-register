@@ -1,5 +1,5 @@
 const Joi = require('joi')
-const { dog, register } = require('../../constants')
+const { dog } = require('../../constants')
 const { getDogPreference, setDogPreference } = require('../../session/dog')
 const ViewModel = require('../../models/dog/preference')
 
@@ -29,7 +29,7 @@ module.exports = [{
     handler: async (request, h) => {
       const preference = request.payload.preference
       setDogPreference(request, preference)
-      return h.redirect(register.routes.summary)
+      return h.redirect(dog.routes.addAnother)
     }
   }
 }]

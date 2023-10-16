@@ -47,7 +47,7 @@ module.exports = [{
       }).custom(dobValidate),
       failAction: async (request, h, error) => {
         setDogDob(request, request.payload)
-        const name = getDogDob(request)
+        const name = { ...getDogDob(request), ...request.payload }
         return h.view(dog.views.dateOfBirth, new ViewModel(name, error)).code(400).takeover()
       }
     },
