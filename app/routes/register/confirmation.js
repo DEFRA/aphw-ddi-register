@@ -10,12 +10,15 @@ module.exports = {
   path: register.routes.confirmation,
   options: {
     handler: async (request, h) => {
+      const registerPayload = getRegister(request)
+
       const registerEntity = {
-        ...getRegister(request),
+        ...registerPayload,
+        ...registerPayload.address,
         dogs: JSON.stringify(getDog(request))
       }
 
-      registerEntity.address = JSON.stringify(registerEntity.address)
+      delete registerEntity.address
 
       const registrationNumber = createRegistrationNumber()
       const email = registerEntity.email
