@@ -1,6 +1,6 @@
 const { register } = require('../../constants')
 
-function ViewModel(dob, errors) {
+function ViewModel (dob, errors) {
   this.model = {
     formAction: register.routes.dateOfBirth,
     backLink: register.routes.address,

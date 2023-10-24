@@ -1,6 +1,6 @@
 const { dog } = require('../../constants')
 
-function ViewModel(value, error) {
+function ViewModel (value, error) {
   this.model = {
     formAction: dog.routes.microchipped,
     backLink: dog.routes.gender,

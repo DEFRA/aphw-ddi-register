@@ -1,6 +1,6 @@
 const { dog } = require('../../constants')
 
-function ViewModel(error) {
+function ViewModel (error) {
   this.model = {
     formAction: dog.routes.addAnother,
     addAnother: {
