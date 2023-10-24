@@ -57,8 +57,6 @@ module.exports = [{
       }
     },
     handler: async (request, h) => {
-      const dob = `${request.payload.year}-${request.payload.month}-${request.payload.day}`
-
       setRegisterOwnerDob(request, request.payload)
       return h.redirect(register.routes.phone)
     }
