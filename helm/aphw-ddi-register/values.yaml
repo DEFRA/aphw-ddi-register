@@ -2,7 +2,7 @@ environment: production
 environmentCode:
 name: aphw-ddi-register
 namespace: ffc-techspike
-workstream: apwh-ddi
+workstream: aphw-ddi
 image: aphw-ddi-register
 
 labels:
@@ -29,7 +29,7 @@ container:
   cookiePassword: who-likes-cookies-i-like-cookies-everybody-likes-cookies
   imagePullPolicy: IfNotPresent
   redisHostname: redis-hostname.default
-  redisPartition: bng-register-web
+  redisPartition: aphw-ddi-register
   redisPassword: redis
   redisPort: 6379
   notifyApiKey: notify-api-key
