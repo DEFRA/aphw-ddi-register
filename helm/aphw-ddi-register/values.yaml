@@ -1,9 +1,9 @@
 environment: production
 environmentCode:
-name: dangerous-dogs-act
+name: aphw-ddi-register
 namespace: ffc-techspike
-workstream: dangerous-dogs
-image: dangerous-dogs-act
+workstream: apwh-ddi
+image: aphw-ddi-register
 
 labels:
   component: service
@@ -12,10 +12,10 @@ appInsights:
   connectionString:
 
 containerConfigMap:
-  name: dangerous-dogs-act-config-map
+  name: aphw-ddi-register-config-map
 
 containerSecret:
-  name: dangerous-dogs-act-container-secret
+  name: aphw-ddi-register-container-secret
   type: Opaque
 
 deployment: {}
@@ -36,11 +36,11 @@ container:
   osPlacesApiKey: os-places-api-key
   azureStorageConnectionString: dummy
   azureStorageUseConnectionString: false
-  azureStorageAccountName: dangerousdogsact
+  azureStorageAccountName: aphwddi
 
 ingress:
   class: nginx
-  endpoint: dangerous-dogs-act
+  endpoint: aphw-ddi-register
   server: value.replaced.from.app.config
 
 livenessProbe:

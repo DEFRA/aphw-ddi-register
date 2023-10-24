@@ -3,7 +3,7 @@
 set -e
 projectRoot="$(a="/$0"; a=${a%/*}; a=${a:-.}; a=${a#/}/; cd "$a/.." || return; pwd)"
 
-service="dangerous-dogs-act"
+service="aphw-ddi-register"
 
 show_help() {
   echo "
