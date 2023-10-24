@@ -1,11 +1,18 @@
+const { parse, format } = require('date-fns')
 const { register: registerConstants, dog: dogConstants } = require('../../constants')
 
 const formatDate = date => {
-  if (date === null || date === undefined) {
-    return date
+  const options = {
+    locale: 'enGB'
   }
 
-  return `${date.day}/${date.month}/${date.year}`
+  if (date === null || date === undefined) {
+    return null
+  }
+
+  const parsedDate = parse(date, 'yyyy-MM-dd', new Date(), options)
+
+  return format(parsedDate, 'dd MMMM yyyy')
 }
 
 function ViewModel (register, dogs, error) {
