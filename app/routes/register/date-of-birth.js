@@ -56,10 +56,8 @@ module.exports = [{
         return h.view(register.views.dateOfBirth, new ViewModel(dob, error)).code(400).takeover()
       }
     },
-    handler: async (request, h) => {     
+    handler: async (request, h) => {
       const dob = `${request.payload.year}-${request.payload.month}-${request.payload.day}`
-
-      const parsedDob = parse(dob, 'yyyy-MM-dd', new Date(), dateOptions)
 
       setRegisterOwnerDob(request, request.payload)
       return h.redirect(register.routes.phone)

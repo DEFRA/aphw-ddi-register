@@ -1,6 +1,6 @@
 const Joi = require('joi')
 const { dog } = require('../../constants')
-const { startOfDay, parse, isAfter, isValid, formatISO } = require('date-fns')
+const { startOfDay, parse, isAfter, isValid } = require('date-fns')
 const { getDogDob, setDogDob } = require('../../session/dog')
 const ViewModel = require('../../models/dog/date-of-birth')
 
@@ -9,10 +9,6 @@ const dateOptions = {
 }
 
 const dobValidate = (value, helper) => {
-  const options = {
-    locale: 'enGB'
-  }
-
   const dob = `${value.year}-${value.month}-${value.day}`
 
   const today = startOfDay(new Date())
