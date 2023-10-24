@@ -1,6 +1,6 @@
 const { dog } = require('../../constants')
 
-function ViewModel(dob, errors) {
+function ViewModel (dob, errors) {
   this.model = {
     formAction: dog.routes.dateOfBirth,
     backLink: dog.routes.name,

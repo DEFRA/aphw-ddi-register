@@ -1,15 +1,15 @@
 services:
-  dangerous-dogs-act:
+  aphw-ddi-register:
     build:
       context: .
       target: production
-    image: dangerous-dogs-act
-    container_name: dangerous-dogs-act
+    image: aphw-ddi-register
+    container_name: aphw-ddi-register
     environment:
-      APPINSIGHTS_CLOUDROLE: dangerous-dogs-act-local
+      APPINSIGHTS_CLOUDROLE: aphw-ddi-register-local
       APPINSIGHTS_CONNECTIONSTRING: ${APPINSIGHTS_CONNECTIONSTRING}
       AZURE_STORAGE_USE_CONNECTION_STRING: "true"
-      AZURE_STORAGE_CONNECTION_STRING: DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;TableEndpoint=http://dangerous-dogs-act-azurite:10002/devstoreaccount1;
+      AZURE_STORAGE_CONNECTION_STRING: DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;TableEndpoint=http://aphw-ddi-register-azurite:10002/devstoreaccount1;
       AZURE_STORAGE_ACCOUNT_NAME: devstoreaccount1
       COOKIE_PASSWORD: cookiecookiecookiecookiecookiecookie
       NOTIFY_API_KEY: ${NOTIFY_API_KEY:-test}
@@ -18,8 +18,8 @@ services:
       REDIS_PASSWORD: ""
       OS_PLACES_API_KEY: ${OS_PLACES_API_KEY:-test}
 
-  dangerous-dogs-act-azurite:
+  aphw-ddi-register-azurite:
     image: mcr.microsoft.com/azure-storage/azurite:3.23.0
     command: "azurite --blobHost 0.0.0.0 --queueHost 0.0.0.0 --tableHost 0.0.0.0 --loose"
     labels:
-      com.docker.compose.dangerous.dogs.act.role: dangerous-dogs-act-azurite
+      com.docker.compose.aphw.ddi.register.role: aphw-ddi-register-azurite

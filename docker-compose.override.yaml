@@ -2,11 +2,11 @@
 # to provide dependencies and expose ports for local testing
 
 services:
-  dangerous-dogs-act:
+  aphw-ddi-register:
     build:
       target: development
-    image: dangerous-dogs-act-development
-    container_name: dangerous-dogs-act-development
+    image: aphw-ddi-register-development
+    container_name: aphw-ddi-register-development
     ports:
       - "3000:3000"
       - "9229:9229"
@@ -14,7 +14,7 @@ services:
       - ./app:/home/node/app
       - ./package.json:/home/node/package.json
 
-  dangerous-dogs-act-azurite:
+  aphw-ddi-register-azurite:
     volumes:
       - azurite_data:/data
     ports:

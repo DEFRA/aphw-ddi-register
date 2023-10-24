@@ -20,14 +20,14 @@ function ViewModel (register, dogs, error) {
         address: []
       },
       dogs: dogs.map((dog, index) => ({
-          id: index + 1,
-          name: dog?.name,
-          dateOfBirth: formatDate(dog?.[dogConstants.keys.dateOfBirth]),
-          colour: dog?.[dogConstants.keys.colour],
-          gender: dog?.gender,
-          microchipped: dog?.microchipped,
-          microchipNumber: dog?.microchipNumber,
-          preference: dog?.preference
+        id: index + 1,
+        name: dog?.name,
+        dateOfBirth: formatDate(dog?.[dogConstants.keys.dateOfBirth]),
+        colour: dog?.[dogConstants.keys.colour],
+        gender: dog?.gender,
+        microchipped: dog?.microchipped,
+        microchipNumber: dog?.microchipNumber,
+        preference: dog?.preference
       }))
     }
   }

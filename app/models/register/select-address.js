@@ -1,6 +1,6 @@
 const { register } = require('../../constants')
 
-function ViewModel(postcode, addresses = [], error) {
+function ViewModel (postcode, addresses = [], error) {
   const defaultOption = {
     text: `${addresses.length} addresses found`,
     value: -1

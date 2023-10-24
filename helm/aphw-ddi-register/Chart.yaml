@@ -1,6 +1,6 @@
 apiVersion: v2
 description: Web service to allow registration of owned dangerous dogs
-name: dangerous-dogs-act
+name: aphw-ddi-register
 # this version is automatically updated in the build pipeline
 version: 1.0.0
 dependencies:

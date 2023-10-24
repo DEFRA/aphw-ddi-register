@@ -1,6 +1,6 @@
 const { dog } = require('../../constants')
 
-function ViewModel(value, error) {
+function ViewModel (value, error) {
   this.model = {
     formAction: dog.routes.gender,
     backLink: dog.routes.colour,

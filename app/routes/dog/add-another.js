@@ -26,7 +26,7 @@ module.exports = [{
     },
     handler: async (request, h) => {
       const addAnother = request.payload.addAnother
-      
+
       if (addAnother === 'yes') {
         addAnotherDog(request)
 

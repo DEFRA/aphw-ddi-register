@@ -17,7 +17,7 @@ const get = (request, entryKey, key) => {
   if (!key) {
     return entryValue
   }
-  
+
   const dog = calcDogIndex(entryValue)
 
   return entryValue?.[dog]?.[key]

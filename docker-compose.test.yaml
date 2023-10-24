@@ -2,11 +2,11 @@
 # that test output is saved to the host
 
 services:
-  dangerous-dogs-act:
+  aphw-ddi-register:
     build:
       target: development
-    image: dangerous-dogs-act-development
-    container_name: dangerous-dogs-act-test
+    image: aphw-ddi-register-development
+    container_name: aphw-ddi-register-test
     command: npm run test
     volumes:
       - ./app:/home/node/app
@@ -15,6 +15,6 @@ services:
       - ./jest.config.js:/home/node/jest.config.js
       - ./package.json:/home/node/package.json
 
-  dangerous-dogs-act-azurite:
+  aphw-ddi-register-azurite:
     labels:
-      com.docker.compose.dangerous.dogs.act.role: test
+      com.docker.compose.aphw.ddi.register.role: test
