@@ -1,6 +1,6 @@
 {
   "name": "aphw-ddi-register",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Web service to allow registration of owned dangerous dogs",
   "homepage": "https://github.com/DEFRA/aphw-ddi-register",
   "main": "app/index.js",
