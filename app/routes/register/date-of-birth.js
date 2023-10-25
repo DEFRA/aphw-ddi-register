@@ -4,15 +4,15 @@ const { startOfDay, parse, isAfter, isValid, differenceInYears } = require('date
 const { getRegisterOwnerDob, setRegisterOwnerDob } = require('../../session/register')
 const ViewModel = require('../../models/register/date-of-birth')
 
-const dobValidate = (value, helper) => {
-  const options = {
-    locale: 'enGB'
-  }
+const dateOptions = {
+  locale: 'enGB'
+}
 
+const dobValidate = (value, helper) => {
   const dob = `${value.year}-${value.month}-${value.day}`
 
   const today = startOfDay(new Date())
-  const parsedDob = parse(dob, 'yyyy-MM-dd', new Date(), options)
+  const parsedDob = parse(dob, 'yyyy-MM-dd', new Date(), dateOptions)
 
   if (!isValid(parsedDob)) {
     return helper.message('Enter a valid date of birth.')
@@ -22,7 +22,7 @@ const dobValidate = (value, helper) => {
     return helper.message('Your date of birth must be in the past')
   }
 
-  const age = differenceInYears(today, parsedDob, options)
+  const age = differenceInYears(today, parsedDob, dateOptions)
 
   if (age < 18) {
     return helper.message('You must be aged 18 or over to register a dangerous dog.')
@@ -52,8 +52,7 @@ module.exports = [{
         year: Joi.number().required()
       }).custom(dobValidate),
       failAction: async (request, h, error) => {
-        setRegisterOwnerDob(request, request.payload)
-        const dob = getRegisterOwnerDob(request)
+        const dob = { ...getRegisterOwnerDob(request), ...request.payload }
         return h.view(register.views.dateOfBirth, new ViewModel(dob, error)).code(400).takeover()
       }
     },

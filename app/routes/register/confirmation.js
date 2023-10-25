@@ -10,16 +10,21 @@ module.exports = {
   path: register.routes.confirmation,
   options: {
     handler: async (request, h) => {
-      const registerDetails = {
-        register: getRegister(request),
-        dog: getDog(request)
+      const registerPayload = getRegister(request)
+
+      const registerEntity = {
+        ...registerPayload,
+        ...registerPayload.address,
+        dogs: JSON.stringify(getDog(request))
       }
 
+      delete registerEntity.address
+
       const registrationNumber = createRegistrationNumber()
-      const email = registerDetails.register.email
-      registerDetails.registrationNumber = registrationNumber
+      const email = registerEntity.email
+      registerEntity.registrationNumber = registrationNumber
       await sendEmail(email, { registrationNumber })
-      await createRow('XL Bully', registrationNumber, registerDetails)
+      await createRow('XL Bully', registrationNumber, registerEntity)
 
       return h.view(register.views.confirmation, {
         registrationNumber,

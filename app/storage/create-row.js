@@ -4,6 +4,7 @@ const createRow = async (partitionKey, rowKey, registration) => {
   const entity = {
     partitionKey,
     rowKey,
+    ...registration,
     data: registration ? JSON.stringify(registration) : undefined
   }
 

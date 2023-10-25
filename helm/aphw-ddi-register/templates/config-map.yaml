@@ -13,9 +13,6 @@ data:
   REDIS_PARTITION: {{ quote .Values.container.redisPartition }}
   {{- end }}
   REDIS_PORT: {{ quote .Values.container.redisPort }}
-  NOTIFY_API_KEY: {{ quote .Values.container.notifyApiKey }}
-  AZURE_STORAGE_CONNECTION_STRING: {{ quote .Values.container.azureStorageConnectionString }}
   AZURE_STORAGE_USE_CONNECTION_STRING: {{ quote .Values.container.azureStorageUseConnectionString }}
   AZURE_STORAGE_ACCOUNT_NAME: {{ quote .Values.container.azureStorageAccountName }}
-  OS_PLACES_API_KEY: {{ quote .Values.container.osPlacesApiKey }}
 {{- end -}}

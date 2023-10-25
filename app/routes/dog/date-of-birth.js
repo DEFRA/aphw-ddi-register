@@ -4,15 +4,15 @@ const { startOfDay, parse, isAfter, isValid } = require('date-fns')
 const { getDogDob, setDogDob } = require('../../session/dog')
 const ViewModel = require('../../models/dog/date-of-birth')
 
-const dobValidate = (value, helper) => {
-  const options = {
-    locale: 'enGB'
-  }
+const dateOptions = {
+  locale: 'enGB'
+}
 
+const dobValidate = (value, helper) => {
   const dob = `${value.year}-${value.month}-${value.day}`
 
   const today = startOfDay(new Date())
-  const parsedDob = parse(dob, 'yyyy-MM-dd', new Date(), options)
+  const parsedDob = parse(dob, 'yyyy-MM-dd', new Date(), dateOptions)
 
   if (!isValid(parsedDob)) {
     return helper.message('Enter a valid date of birth.')
@@ -46,9 +46,8 @@ module.exports = [{
         year: Joi.number().required()
       }).custom(dobValidate),
       failAction: async (request, h, error) => {
-        setDogDob(request, request.payload)
-        const name = { ...getDogDob(request), ...request.payload }
-        return h.view(dog.views.dateOfBirth, new ViewModel(name, error)).code(400).takeover()
+        const dob = { ...getDogDob(request), ...request.payload }
+        return h.view(dog.views.dateOfBirth, new ViewModel(dob, error)).code(400).takeover()
       }
     },
     handler: async (request, h) => {

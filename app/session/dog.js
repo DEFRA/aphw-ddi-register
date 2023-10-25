@@ -1,3 +1,4 @@
+const { parse, formatISO, parseISO, getDate, getMonth, getYear } = require('date-fns')
 const { keys } = require('../constants/dog')
 
 const calcDogIndex = (entry) => entry.length - 1
@@ -40,11 +41,24 @@ const setDogName = (request, value) => {
 }
 
 const getDogDob = (request) => {
-  return get(request, keys.entry, keys.dateOfBirth)
+  const savedDate = get(request, keys.entry, keys.dateOfBirth)
+
+  const date = parseISO(savedDate)
+
+  const dob = {
+    day: getDate(date),
+    month: getMonth(date),
+    year: getYear(date)
+  }
+
+  return savedDate && dob
 }
 
 const setDogDob = (request, value) => {
-  set(request, keys.entry, keys.dateOfBirth, value)
+  const dob = `${value.year}-${value.month}-${value.day}`
+  const parsedDob = parse(dob, 'yyyy-MM-dd', new Date(), { locale: 'enGB' })
+
+  set(request, keys.entry, keys.dateOfBirth, formatISO(parsedDob, { representation: 'date' }))
 }
 
 const getDogColour = (request) => {
