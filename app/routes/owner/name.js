@@ -18,8 +18,13 @@ module.exports = [{
   path: owner.routes.name,
   options: {
     validate: {
+      options: {
+        abortEarly: false
+      },
       payload: Joi.object({
-        name: Joi.string().required()
+        title: Joi.string().allow(null).allow('').optional(),
+        firstName: Joi.string(),
+        lastName: Joi.string()
       }),
       failAction: async (request, h, error) => {
         const name = getName(request)
@@ -27,8 +32,7 @@ module.exports = [{
       }
     },
     handler: async (request, h) => {
-      const name = request.payload.name
-      setName(request, name)
+      setName(request, request.payload)
       return h.redirect(owner.routes.postcode)
     }
   }

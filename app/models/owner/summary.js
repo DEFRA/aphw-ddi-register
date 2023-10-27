@@ -13,7 +13,7 @@ function ViewModel (owner, dogs, error) {
     formAction: ownerConstants.routes.confirmation,
     summary: {
       register: {
-        name: owner?.name,
+        name: [],
         dateOfBirth: formatDate(owner?.dateOfBirth),
         phone: owner?.phone,
         email: owner?.email,
@@ -30,6 +30,16 @@ function ViewModel (owner, dogs, error) {
         preference: dog?.preference
       }))
     }
+  }
+
+  const name = owner?.name
+
+  if (name !== null && name !== undefined) {
+    Object.keys(name).forEach(key => {
+      if (name[key]) {
+        this.model.summary.register.name.push(name[key])
+      }
+    })
   }
 
   const address = owner?.address

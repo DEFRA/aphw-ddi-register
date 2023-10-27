@@ -19,7 +19,7 @@ const setOwner = (request, value) => {
 }
 
 const getName = (request) => {
-  return get(request, keys.entry, keys.name)
+  return get(request, keys.entry, keys.name) || {}
 }
 
 const setName = (request, value) => {

@@ -1,6 +1,8 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
 {% extends '_layout.njk' %}
 
@@ -24,14 +26,34 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form method="POST" action="{{ model.formAction }}" novalidate>
-      {{ govukInput(model.name) }}
-
-      {{ govukButton({
-        text: "Continue"
+    {% if model.name.errors | length > 0 %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: model.name.errors
       }) }}
-    </div>
-  </form>
+    {% endif %}
+
+    {% call govukFieldset({
+      legend: {
+        text: "What is your name?",
+        classes: "govuk-fieldset__legend--l",
+        isPageHeading: true
+      }
+    }) %}
+
+      <form method="POST" action="{{ model.formAction }}" novalidate>
+        {{ govukInput(model.name.title) }}
+
+        {{ govukInput(model.name.firstName) }}
+
+        {{ govukInput(model.name.lastName) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    {% endcall %}
+  </div>
 </div>
 
 {% endblock %}
