@@ -29,7 +29,7 @@ module.exports = [{
     handler: async (request, h) => {
       const microchipNumber = request.payload.microchipNumber
       setDogMicrochipNumber(request, microchipNumber)
-      return h.redirect(dog.routes.preference)
+      return h.redirect(dog.routes.addAnother)
     }
   }
 }]

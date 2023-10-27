@@ -26,8 +26,7 @@ function ViewModel (owner, dogs, error) {
         colour: dog?.[dogConstants.keys.colour],
         gender: dog?.gender,
         microchipped: dog?.microchipped,
-        microchipNumber: dog?.microchipNumber,
-        preference: dog?.preference
+        microchipNumber: dog?.microchipNumber
       }))
     }
   }

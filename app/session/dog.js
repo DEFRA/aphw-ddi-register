@@ -79,14 +79,6 @@ const setDogMicrochipNumber = (request, value) => {
   set(request, keys.entry, keys.microchipNumber, value)
 }
 
-const getDogPreference = (request) => {
-  return get(request, keys.entry, keys.preference)
-}
-
-const setDogPreference = (request, value) => {
-  set(request, keys.entry, keys.preference, value)
-}
-
 const addAnotherDog = (request) => {
   const entryValue = request.yar?.get(keys.entry) || [{}]
 
@@ -110,7 +102,5 @@ module.exports = {
   setDogMicrochipped,
   getDogMicrochipNumber,
   setDogMicrochipNumber,
-  getDogPreference,
-  setDogPreference,
   addAnotherDog
 }
