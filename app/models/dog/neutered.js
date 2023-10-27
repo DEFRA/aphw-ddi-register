@@ -2,13 +2,13 @@ const { dog } = require('../../constants')
 
 function ViewModel (value, error) {
   this.model = {
-    formAction: dog.routes.microchipped,
-    backLink: dog.routes.neutered,
-    microchipped: {
-      name: 'microchipped',
+    formAction: dog.routes.neutered,
+    backLink: dog.routes.gender,
+    neutered: {
+      name: 'neutered',
       fieldset: {
         legend: {
-          text: 'Is your dog microchipped?',
+          text: 'Is your dog neutered?',
           isPageHeading: true,
           classes: 'govuk-fieldset__legend--l'
         }
@@ -18,6 +18,11 @@ function ViewModel (value, error) {
           value: 'Yes',
           text: 'Yes',
           checked: value === 'Yes'
+        },
+        {
+          value: 'No',
+          text: 'No',
+          checked: value === 'No'
         },
         {
           value: 'Not sure',
@@ -30,7 +35,7 @@ function ViewModel (value, error) {
 
   if (error) {
     this.model.microchipped.errorMessage = {
-      text: 'Select whether your dog is microchipped.'
+      text: 'Select whether your dog has been neutered.'
     }
   }
 }

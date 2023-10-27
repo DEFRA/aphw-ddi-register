@@ -4,6 +4,7 @@ const constants = {
     colour: '/dog/colour',
     dateOfBirth: '/dog/date-of-birth',
     gender: '/dog/gender',
+    neutered: '/dog/neutered',
     microchipped: '/dog/microchipped',
     microchipNumber: '/dog/microchip-number',
     addAnother: '/dog/add-another'
@@ -13,6 +14,7 @@ const constants = {
     colour: 'dog/colour',
     dateOfBirth: 'dog/date-of-birth',
     gender: 'dog/gender',
+    neutered: 'dog/neutered',
     microchipped: 'dog/microchipped',
     microchipNumber: 'dog/microchip-number',
     addAnother: 'dog/add-another'
@@ -24,6 +26,7 @@ const constants = {
     dateOfBirth: 'dateOfBirth',
     colour: 'colour',
     gender: 'gender',
+    neutered: 'neutered',
     microchipped: 'microchipped',
     microchipNumber: 'microchipNumber',
   }

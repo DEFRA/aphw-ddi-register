@@ -63,6 +63,14 @@ const setDogGender = (request, value) => {
   set(request, keys.entry, keys.gender, value)
 }
 
+const getDogNeutered = (request) => {
+  return get(request, keys.entry, keys.neutered)
+}
+
+const setDogNeutered = (request, value) => {
+  set(request, keys.entry, keys.neutered, value)
+}
+
 const getDogMicrochipped = (request) => {
   return get(request, keys.entry, keys.microchipped)
 }
@@ -98,6 +106,8 @@ module.exports = {
   setDogColour,
   getDogGender,
   setDogGender,
+  getDogNeutered,
+  setDogNeutered,
   getDogMicrochipped,
   setDogMicrochipped,
   getDogMicrochipNumber,

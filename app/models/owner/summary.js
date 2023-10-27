@@ -25,6 +25,7 @@ function ViewModel (owner, dogs, error) {
         dateOfBirth: formatDate(dog?.[dogConstants.keys.dateOfBirth]),
         colour: dog?.[dogConstants.keys.colour],
         gender: dog?.gender,
+        neutered: dog?.neutered,
         microchipped: dog?.microchipped,
         microchipNumber: dog?.microchipNumber
       }))
