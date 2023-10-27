@@ -18,7 +18,7 @@ function ViewModel (value, error) {
 
   if (error) {
     this.model.email.errorMessage = {
-      text: 'Enter your email address.'
+      text: 'Enter an email address in the correct format, like name@example.com.'
     }
   }
 }

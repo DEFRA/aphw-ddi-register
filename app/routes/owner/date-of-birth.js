@@ -24,8 +24,8 @@ const dobValidate = (value, helper) => {
 
   const age = differenceInYears(today, parsedDob, options)
 
-  if (age < 18) {
-    return helper.message('You must be aged 18 or over to register a dangerous dog.')
+  if (age < 16) {
+    return helper.message('You must be aged 16 or over to register an XL Bully.')
   }
 
   return value

@@ -13,6 +13,9 @@ function ViewModel (dob, errors) {
           classes: 'govuk-fieldset__legend--l'
         }
       },
+      hint: {
+        text: 'You can estimate the date of birth if you do not know the exact date. For example, if you know your dog was born in March 2021, enter 01 03 2021'
+      },
       items: [
         {
           name: 'day',

@@ -14,7 +14,7 @@ function ViewModel (dob, errors) {
         }
       },
       hint: {
-        text: 'You must be 18 or over to register a dangerous dog.'
+        text: 'You must be 16 or over to add an XL bully to the interim register.'
       },
       items: [
         {

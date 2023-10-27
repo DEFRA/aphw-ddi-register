@@ -6,9 +6,12 @@ function ViewModel (value, error) {
     backLink: owner.routes.dateOfBirth,
     phoneNumber: {
       label: {
-        text: 'What is your telephone number?',
+        text: 'What is your phone number?',
         classes: 'govuk-label--l',
         isPageHeading: true
+      },
+      hint: {
+        text: 'You can provide either a home or mobile phone number.'
       },
       id: 'phone',
       name: 'phone',
