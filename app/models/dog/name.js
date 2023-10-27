@@ -1,9 +1,9 @@
-const { dog, register } = require('../../constants')
+const { dog, owner } = require('../../constants')
 
 function ViewModel (value, error) {
   this.model = {
     formAction: dog.routes.name,
-    backLink: register.routes.email,
+    backLink: owner.routes.email,
     name: {
       label: {
         text: 'What is the name of the dog?',

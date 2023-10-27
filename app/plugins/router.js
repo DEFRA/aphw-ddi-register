@@ -1,17 +1,17 @@
 const routes = [].concat(
   require('../routes/assets'),
   require('../routes/index'),
-  require('../routes/register/name'),
-  require('../routes/register/date-of-birth'),
-  require('../routes/register/postcode'),
-  require('../routes/register/select-address'),
-  require('../routes/register/address'),
-  require('../routes/register/phone-number'),
+  require('../routes/owner/name'),
+  require('../routes/owner/date-of-birth'),
+  require('../routes/owner/postcode'),
+  require('../routes/owner/select-address'),
+  require('../routes/owner/address'),
+  require('../routes/owner/phone-number'),
   require('../routes/dog/name'),
   require('../routes/dog/date-of-birth'),
   require('../routes/dog/colour'),
   require('../routes/dog/gender'),
-  require('../routes/register/confirmation'),
+  require('../routes/owner/confirmation'),
   require('../routes/dog/microchipped'),
   require('../routes/dog/microchip-number'),
   require('../routes/dog/preference'),
@@ -19,8 +19,8 @@ const routes = [].concat(
   require('../routes/healthy'),
   require('../routes/healthz'),
   require('../routes/cookies'),
-  require('../routes/register/summary'),
-  require('../routes/register/email')
+  require('../routes/owner/summary'),
+  require('../routes/owner/email')
 )
 
 module.exports = {

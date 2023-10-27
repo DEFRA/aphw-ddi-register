@@ -1,8 +1,8 @@
-const { register } = require('../../constants')
+const { owner } = require('../../constants')
 
 function ViewModel (value, error) {
   this.model = {
-    formAction: register.routes.name,
+    formAction: owner.routes.name,
     backLink: '/',
     name: {
       label: {

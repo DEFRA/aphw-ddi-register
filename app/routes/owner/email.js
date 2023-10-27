@@ -1,21 +1,21 @@
 const Joi = require('joi')
-const { register, dog } = require('../../constants')
-const { setEmail, getEmail } = require('../../session/register')
-const ViewModel = require('../../models/register/email')
+const { owner, dog } = require('../../constants')
+const { getEmail, setEmail } = require('../../session/owner')
+const ViewModel = require('../../models/owner/email')
 
 module.exports = [{
   method: 'GET',
-  path: register.routes.email,
+  path: owner.routes.email,
   options: {
     handler: async (request, h) => {
       const email = getEmail(request)
-      return h.view(register.views.email, new ViewModel(email))
+      return h.view(owner.views.email, new ViewModel(email))
     }
   }
 },
 {
   method: 'POST',
-  path: register.routes.email,
+  path: owner.routes.email,
   options: {
     validate: {
       payload: Joi.object({
@@ -23,7 +23,7 @@ module.exports = [{
       }),
       failAction: async (request, h, error) => {
         const email = getEmail(request)
-        return h.view(register.views.email, new ViewModel(email, error)).code(400).takeover()
+        return h.view(owner.views.email, new ViewModel(email, error)).code(400).takeover()
       }
     },
     handler: async (request, h) => {

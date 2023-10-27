@@ -1,9 +1,9 @@
-const { register } = require('../../constants')
+const { owner } = require('../../constants')
 
 function ViewModel (dob, errors) {
   this.model = {
-    formAction: register.routes.dateOfBirth,
-    backLink: register.routes.address,
+    formAction: owner.routes.dateOfBirth,
+    backLink: owner.routes.address,
     dateOfBirth: {
       id: 'owner-date-of-birth',
       fieldset: {

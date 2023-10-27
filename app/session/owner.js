@@ -1,4 +1,4 @@
-const { keys } = require('../constants/register')
+const { keys } = require('../constants/owner')
 
 const set = (request, entryKey, key, value) => {
   const entryValue = request.yar?.get(entryKey) || {}
@@ -10,35 +10,35 @@ const get = (request, entryKey, key) => {
   return key ? request.yar?.get(entryKey)?.[key] : request.yar?.get(entryKey)
 }
 
-const getRegister = (request) => {
+const getOwner = (request) => {
   return get(request, keys.entry)
 }
 
-const setRegister = (request, value) => {
+const setOwner = (request, value) => {
   set(request, keys.entry, value)
 }
 
-const getRegisterName = (request) => {
+const getName = (request) => {
   return get(request, keys.entry, keys.name)
 }
 
-const setRegisterName = (request, value) => {
+const setName = (request, value) => {
   set(request, keys.entry, keys.name, value)
 }
 
-const getRegisterOwnerDob = (request) => {
+const getBirthDate = (request) => {
   return get(request, keys.entry, keys.dateOfBirth)
 }
 
-const setRegisterOwnerDob = (request, value) => {
+const setBirthDate = (request, value) => {
   set(request, keys.entry, keys.dateOfBirth, value)
 }
 
-const getRegisterAddress = (request) => {
+const getAddress = (request) => {
   return get(request, keys.entry, keys.address)
 }
 
-const setRegisterAddress = (request, value) => {
+const setAddress = (request, value) => {
   set(request, keys.entry, keys.address, value)
 }
 
@@ -50,35 +50,35 @@ const setEmail = (request, value) => {
   set(request, keys.entry, keys.email, value)
 }
 
-const getRegisterAddressPostcode = (request) => {
+const getAddressPostcode = (request) => {
   return get(request, keys.entry, keys.address)?.postcode
 }
 
-const setRegisterAddressPostcode = (request, value) => {
+const setAddressPostcode = (request, value) => {
   set(request, keys.entry, keys.address, value)
 }
 
-const getRegisterPhoneNumber = (request) => {
+const getPhoneNumber = (request) => {
   return get(request, keys.entry, keys.phone)
 }
 
-const setRegisterPhoneNumber = (request, value) => {
+const setPhoneNumber = (request, value) => {
   set(request, keys.entry, keys.phone, value)
 }
 
 module.exports = {
-  getRegister,
-  setRegister,
-  getRegisterName,
-  setRegisterName,
-  getRegisterOwnerDob,
-  setRegisterOwnerDob,
-  getRegisterAddress,
-  setRegisterAddress,
-  getRegisterAddressPostcode,
-  setRegisterAddressPostcode,
+  getOwner,
+  setOwner,
+  getName,
+  setName,
+  getBirthDate,
+  setBirthDate,
+  getAddress,
+  setAddress,
+  getAddressPostcode,
+  setAddressPostcode,
   getEmail,
   setEmail,
-  getRegisterPhoneNumber,
-  setRegisterPhoneNumber
+  getPhoneNumber,
+  setPhoneNumber
 }

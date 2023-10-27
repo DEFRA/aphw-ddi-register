@@ -1,5 +1,5 @@
 const Joi = require('joi')
-const { dog, register } = require('../../constants')
+const { dog, owner } = require('../../constants')
 const { addAnotherDog } = require('../../session/dog')
 const ViewModel = require('../../models/dog/add-another')
 
@@ -33,7 +33,7 @@ module.exports = [{
         return h.redirect(dog.routes.name)
       }
 
-      return h.redirect(register.routes.summary)
+      return h.redirect(owner.routes.summary)
     }
   }
 }]

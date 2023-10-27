@@ -1,9 +1,9 @@
-const { register } = require('../../constants')
+const { owner } = require('../../constants')
 
 function ViewModel (value, error) {
   this.model = {
-    formAction: register.routes.email,
-    backLink: register.routes.phoneNumber,
+    formAction: owner.routes.email,
+    backLink: owner.routes.phoneNumber,
     email: {
       label: {
         text: 'What is your email address?',
