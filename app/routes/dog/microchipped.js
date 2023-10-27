@@ -30,8 +30,8 @@ module.exports = [{
       const microchipped = request.payload.microchipped
       setDogMicrochipped(request, microchipped)
 
-      if (microchipped === 'no') {
-        return h.redirect(dog.routes.preference)
+      if (microchipped !== 'Yes') {
+        return h.redirect(dog.routes.addAnother)
       }
 
       return h.redirect(dog.routes.microchipNumber)

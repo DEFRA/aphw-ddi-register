@@ -15,14 +15,14 @@ function ViewModel (value, error) {
       },
       items: [
         {
-          value: 'yes',
+          value: 'Yes',
           text: 'Yes',
-          checked: value === 'yes'
+          checked: value === 'Yes'
         },
         {
-          value: 'no',
-          text: 'No',
-          checked: value === 'no'
+          value: 'Not sure',
+          text: 'Not sure',
+          checked: value === 'Not sure'
         }
       ]
     }
@@ -30,7 +30,7 @@ function ViewModel (value, error) {
 
   if (error) {
     this.model.microchipped.errorMessage = {
-      text: 'Select if your dog is microchipped.'
+      text: 'Select whether your dog is microchipped.'
     }
   }
 }
