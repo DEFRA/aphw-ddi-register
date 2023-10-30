@@ -13,6 +13,7 @@ services:
       AZURE_STORAGE_ACCOUNT_NAME: devstoreaccount1
       COOKIE_PASSWORD: cookiecookiecookiecookiecookiecookie
       NOTIFY_API_KEY: ${NOTIFY_API_KEY:-test}
+      PAYMENT_VALUE:
       PAYMENT_API_URL: ${PAYMENT_API_URL:-https://publicapi.payments.service.gov.uk/v1/payments}
       PAYMENT_API_KEY:
       PAYMENT_RETURN_URL: ${PAYMENT_RETURN_URL:-http://localhost:3000/register/payment-return}

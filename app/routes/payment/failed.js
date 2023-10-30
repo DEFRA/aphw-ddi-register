@@ -1,4 +1,4 @@
-const paymentDetails = require('../../api/payment-details')
+const paymentDetails = require('../../api/payment/details')
 const { getRegisterPaymentId } = require('../../session/register')
 const { register } = require('../../constants')
 

@@ -34,7 +34,8 @@ const constants = {
     phone: 'phone',
     address: 'address',
     email: 'email',
-    paymentId: 'paymentId'
+    paymentId: 'paymentId',
+    registrationId: 'registrationId'
   }
 }
 

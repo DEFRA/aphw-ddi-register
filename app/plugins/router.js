@@ -21,9 +21,9 @@ const routes = [].concat(
   require('../routes/cookies'),
   require('../routes/register/summary'),
   require('../routes/register/email'),
-  require('../routes/payment/create-payment'),
-  require('../routes/payment/payment-failed'),
-  require('../routes/payment/payment-return')
+  require('../routes/payment/create'),
+  require('../routes/payment/failed'),
+  require('../routes/payment/return')
 )
 
 module.exports = {

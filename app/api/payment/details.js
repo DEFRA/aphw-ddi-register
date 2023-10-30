@@ -1,4 +1,4 @@
-const config = require('../config').govPay
+const config = require('../../config').govPay
 const { get } = require('./base')
 
 const paymentDetails = async (id) => {
