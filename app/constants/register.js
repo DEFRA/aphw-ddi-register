@@ -8,6 +8,10 @@ const constants = {
     phone: '/register/phone-number',
     email: '/register/email',
     summary: '/register/summary',
+    payment: '/register/payment',
+    paymentSuccessful: '/register/confirmation',
+    paymentFailed: '/register/payment-failed',
+    paymentReturn: '/register/payment-return',
     confirmation: '/register/confirmation'
   },
   views: {
@@ -19,6 +23,8 @@ const constants = {
     phone: 'register/phone-number',
     email: 'register/email',
     summary: 'register/summary',
+    payment: 'register/payment',
+    paymentFailed: 'register/payment-failed',
     confirmation: 'register/confirmation'
   },
   keys: {
@@ -27,7 +33,8 @@ const constants = {
     dateOfBirth: 'dateOfBirth',
     phone: 'phone',
     address: 'address',
-    email: 'email'
+    email: 'email',
+    paymentId: 'paymentId'
   }
 }
 

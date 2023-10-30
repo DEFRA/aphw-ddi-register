@@ -10,7 +10,7 @@ const formatDate = date => {
 
 function ViewModel (register, dogs, error) {
   this.model = {
-    formAction: registerConstants.routes.confirmation,
+    formAction: registerConstants.routes.payment,
     summary: {
       register: {
         name: register?.name,
