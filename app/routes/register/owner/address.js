@@ -1,7 +1,7 @@
 const Joi = require('joi')
-const { owner } = require('../../constants')
-const { getAddress, setAddress } = require('../../session/owner')
-const ViewModel = require('../../models/owner/address')
+const { owner } = require('../../../constants')
+const { getAddress, setAddress } = require('../../../session/owner')
+const ViewModel = require('../../../models/owner/address')
 
 module.exports = [{
   method: 'GET',

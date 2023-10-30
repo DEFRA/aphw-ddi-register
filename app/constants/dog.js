@@ -1,23 +1,23 @@
 const constants = {
   routes: {
-    name: '/dog/name',
-    colour: '/dog/colour',
-    dateOfBirth: '/dog/date-of-birth',
-    gender: '/dog/gender',
-    neutered: '/dog/neutered',
-    microchipped: '/dog/microchipped',
-    microchipNumber: '/dog/microchip-number',
-    addAnother: '/dog/add-another'
+    name: '/register/dog/name',
+    colour: '/register/dog/colour',
+    dateOfBirth: '/register/dog/date-of-birth',
+    gender: '/register/dog/gender',
+    neutered: '/register/dog/neutered',
+    microchipped: '/register/dog/microchipped',
+    microchipNumber: '/register/dog/microchip-number',
+    addAnother: '/register/dog/add-another'
   },
   views: {
-    name: 'dog/name',
-    colour: 'dog/colour',
-    dateOfBirth: 'dog/date-of-birth',
-    gender: 'dog/gender',
-    neutered: 'dog/neutered',
-    microchipped: 'dog/microchipped',
-    microchipNumber: 'dog/microchip-number',
-    addAnother: 'dog/add-another'
+    name: 'register/dog/name',
+    colour: 'register/dog/colour',
+    dateOfBirth: 'register/dog/date-of-birth',
+    gender: 'register/dog/gender',
+    neutered: 'register/dog/neutered',
+    microchipped: 'register/dog/microchipped',
+    microchipNumber: 'register/dog/microchip-number',
+    addAnother: 'register/dog/add-another'
   },
   keys: {
     entry: 'dogs',

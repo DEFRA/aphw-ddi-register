@@ -2,12 +2,12 @@ const sendEmail = require('../../notify')
 const { getOwner } = require('../../session/owner')
 const { getDog } = require('../../session/dog')
 const { createRow } = require('../../storage')
-const { owner } = require('../../constants')
+const { register } = require('../../constants')
 const createRegistrationNumber = require('../../create-registration-number')
 
 module.exports = {
   method: 'GET',
-  path: owner.routes.confirmation,
+  path: register.routes.confirmation,
   options: {
     handler: async (request, h) => {
       const registerDetails = {
@@ -21,7 +21,7 @@ module.exports = {
       await sendEmail(email, { registrationNumber })
       await createRow('XL Bully', registrationNumber, registerDetails)
 
-      return h.view(owner.views.confirmation, {
+      return h.view(register.views.confirmation, {
         registrationNumber,
         email
       })

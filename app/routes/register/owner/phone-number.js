@@ -1,8 +1,8 @@
 const Joi = require('joi')
-const { owner } = require('../../constants')
-const { getPhoneNumber, setPhoneNumber } = require('../../session/owner')
+const { owner } = require('../../../constants')
+const { getPhoneNumber, setPhoneNumber } = require('../../../session/owner')
 const { isValidPhoneNumber } = require('libphonenumber-js')
-const ViewModel = require('../../models/owner/phone-number.js')
+const ViewModel = require('../../../models/owner/phone-number.js')
 
 const validatePhone = (phone, helper) => {
   if (!isValidPhoneNumber(phone, 'GB')) {

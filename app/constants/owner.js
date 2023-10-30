@@ -1,25 +1,21 @@
 const constants = {
   routes: {
-    name: '/owner/name',
-    postcode: '/owner/postcode',
-    selectAddress: '/owner/select-address',
-    address: '/owner/address',
-    dateOfBirth: '/owner/date-of-birth',
-    phone: '/owner/phone-number',
-    email: '/owner/email',
-    summary: '/owner/summary',
-    confirmation: '/owner/confirmation'
+    name: '/register/owner/name',
+    postcode: '/register/owner/postcode',
+    selectAddress: '/register/owner/select-address',
+    address: '/register/owner/address',
+    dateOfBirth: '/register/owner/date-of-birth',
+    phone: '/register/owner/phone-number',
+    email: '/register/owner/email'
   },
   views: {
-    name: 'owner/name',
-    postcode: 'owner/postcode',
-    selectAddress: 'owner/select-address',
-    address: 'owner/address',
-    dateOfBirth: 'owner/date-of-birth',
-    phone: 'owner/phone-number',
-    email: 'owner/email',
-    summary: 'owner/summary',
-    confirmation: 'owner/confirmation'
+    name: 'register/owner/name',
+    postcode: 'register/owner/postcode',
+    selectAddress: 'register/owner/select-address',
+    address: 'register/owner/address',
+    dateOfBirth: 'register/owner/date-of-birth',
+    phone: 'register/owner/phone-number',
+    email: 'register/owner/email'
   },
   keys: {
     entry: 'register',

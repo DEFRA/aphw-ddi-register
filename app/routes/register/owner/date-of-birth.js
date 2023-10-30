@@ -1,8 +1,8 @@
 const Joi = require('joi')
-const { owner } = require('../../constants')
+const { owner } = require('../../../constants')
 const { startOfDay, parse, isAfter, isValid, differenceInYears } = require('date-fns')
-const { getBirthDate, setBirthDate } = require('../../session/owner')
-const ViewModel = require('../../models/owner/date-of-birth')
+const { getBirthDate, setBirthDate } = require('../../../session/owner')
+const ViewModel = require('../../../models/owner/date-of-birth')
 
 const dobValidate = (value, helper) => {
   const options = {

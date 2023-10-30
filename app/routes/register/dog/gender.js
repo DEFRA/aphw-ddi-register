@@ -1,7 +1,7 @@
 const Joi = require('joi')
-const { dog } = require('../../constants')
-const { getDogGender, setDogGender } = require('../../session/dog')
-const ViewModel = require('../../models/dog/gender')
+const { dog } = require('../../../constants')
+const { getDogGender, setDogGender } = require('../../../session/dog')
+const ViewModel = require('../../../models/dog/gender')
 
 module.exports = [{
   method: 'GET',
