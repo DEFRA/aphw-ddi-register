@@ -14,6 +14,7 @@ const schema = Joi.object({
     apiKey: Joi.string().required()
   },
   govPay: {
+    paymentEnabled: Joi.boolean().default(true),
     paymentValue: Joi.number().required(),
     paymentApiKey: Joi.string().required(),
     paymentApiUrl: Joi.string().default('https://publicapi.payments.service.gov.uk/v1/payments'),
@@ -62,6 +63,7 @@ const config = {
     apiKey: process.env.OS_PLACES_API_KEY
   },
   govPay: {
+    paymentEnabled: process.env.PAYMENT_ENABLED,
     paymentValue: process.env.PAYMENT_VALUE,
     paymentApiKey: process.env.PAYMENT_API_KEY,
     paymentApiUrl: process.env.PAYMENT_API_URL,
