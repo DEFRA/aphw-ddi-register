@@ -6,12 +6,20 @@ const schema = Joi.object({
   port: Joi.number().default(3001),
   env: Joi.string().valid('development', 'test', 'production').default('development'),
   useRedis: Joi.boolean().default(false),
+  serviceUri: Joi.string().uri(),
   notify: {
     apiKey: Joi.string().required(),
     templateId: Joi.string().required()
   },
   places: {
     apiKey: Joi.string().required()
+  },
+  govPay: {
+    paymentEnabled: Joi.boolean().default(true),
+    paymentValue: Joi.number().required(),
+    paymentApiKey: Joi.string().required(),
+    paymentApiUrl: Joi.string().default('https://publicapi.payments.service.gov.uk/v1/payments'),
+    paymentReturnUrl: Joi.string().default('http://localhost:3000/register/payment-return')
   },
   cache: {
     expiresIn: Joi.number().default(1000 * 3600 * 24 * 3), // 3 days
@@ -48,12 +56,20 @@ const config = {
   port: process.env.PORT,
   env: process.env.NODE_ENV,
   useRedis: process.env.NODE_ENV !== 'test',
+  serviceUri: process.env.SERVICE_URI,
   notify: {
     apiKey: process.env.NOTIFY_API_KEY,
     templateId: '8800c3c1-2b6e-43c4-b089-2d1b34cc3ccb'
   },
   places: {
     apiKey: process.env.OS_PLACES_API_KEY
+  },
+  govPay: {
+    paymentEnabled: process.env.PAYMENT_ENABLED,
+    paymentValue: process.env.PAYMENT_VALUE,
+    paymentApiKey: process.env.PAYMENT_API_KEY,
+    paymentApiUrl: process.env.PAYMENT_API_URL,
+    paymentReturnUrl: process.env.PAYMENT_RETURN_URL
   },
   cache: {
     options: {

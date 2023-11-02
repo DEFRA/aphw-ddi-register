@@ -66,6 +66,30 @@ const setRegisterPhoneNumber = (request, value) => {
   set(request, keys.entry, keys.phone, value)
 }
 
+const getRegisterPaymentId = (request) => {
+  return get(request, keys.entry, keys.paymentId)
+}
+
+const setRegisterPaymentId = (request, value) => {
+  set(request, keys.entry, keys.paymentId, value)
+}
+
+const getRegistrationId = (request) => {
+  return get(request, keys.entry, keys.registrationId)
+}
+
+const setRegistrationId = (request, value) => {
+  set(request, keys.entry, keys.registrationId, value)
+}
+
+const getRegistrationPaymentSucessful = (request) => {
+  return get(request, keys.entry, keys.paymentSuccessful)
+}
+
+const setRegistrationPaymentSucessful = (request, value) => {
+  set(request, keys.entry, keys.paymentSuccessful, value)
+}
+
 module.exports = {
   getRegister,
   setRegister,
@@ -80,5 +104,11 @@ module.exports = {
   getEmail,
   setEmail,
   getRegisterPhoneNumber,
-  setRegisterPhoneNumber
+  setRegisterPhoneNumber,
+  getRegisterPaymentId,
+  setRegisterPaymentId,
+  getRegistrationId,
+  setRegistrationId,
+  getRegistrationPaymentSucessful,
+  setRegistrationPaymentSucessful
 }

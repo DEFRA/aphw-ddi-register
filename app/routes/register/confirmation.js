@@ -1,5 +1,5 @@
 const sendEmail = require('../../notify')
-const { getRegister } = require('../../session/register')
+const { getRegister, getRegistrationId } = require('../../session/register')
 const { getDog } = require('../../session/dog')
 const { createRow } = require('../../storage')
 const { register } = require('../../constants')
@@ -15,7 +15,7 @@ module.exports = {
         dog: getDog(request)
       }
 
-      const registrationNumber = createRegistrationNumber()
+      const registrationNumber = getRegistrationId(request)
       const email = registerDetails.register.email
       registerDetails.registrationNumber = registrationNumber
       await sendEmail(email, { registrationNumber })

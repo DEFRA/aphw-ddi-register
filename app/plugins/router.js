@@ -20,7 +20,10 @@ const routes = [].concat(
   require('../routes/healthz'),
   require('../routes/cookies'),
   require('../routes/register/summary'),
-  require('../routes/register/email')
+  require('../routes/register/email'),
+  require('../routes/payment/create'),
+  require('../routes/payment/failed'),
+  require('../routes/payment/return')
 )
 
 module.exports = {
