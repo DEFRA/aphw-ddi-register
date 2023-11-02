@@ -1,14 +1,17 @@
-const { register } = require('../../constants')
+const { owner } = require('../../constants')
 
 function ViewModel (value, error) {
   this.model = {
-    formAction: register.routes.phone,
-    backLink: register.routes.dateOfBirth,
+    formAction: owner.routes.phone,
+    backLink: owner.routes.dateOfBirth,
     phoneNumber: {
       label: {
-        text: 'What is your telephone number?',
+        text: 'What is your phone number?',
         classes: 'govuk-label--l',
         isPageHeading: true
+      },
+      hint: {
+        text: 'You can provide either a home or mobile phone number.'
       },
       id: 'phone',
       name: 'phone',

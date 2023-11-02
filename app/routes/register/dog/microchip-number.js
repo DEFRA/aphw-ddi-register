@@ -1,7 +1,7 @@
 const Joi = require('joi')
-const { dog } = require('../../constants')
-const { getDogMicrochipNumber, setDogMicrochipNumber } = require('../../session/dog')
-const ViewModel = require('../../models/dog/microchip-number')
+const { dog } = require('../../../constants')
+const { getDogMicrochipNumber, setDogMicrochipNumber } = require('../../../session/dog')
+const ViewModel = require('../../../models/dog/microchip-number')
 
 module.exports = [{
   method: 'GET',
@@ -29,7 +29,7 @@ module.exports = [{
     handler: async (request, h) => {
       const microchipNumber = request.payload.microchipNumber
       setDogMicrochipNumber(request, microchipNumber)
-      return h.redirect(dog.routes.preference)
+      return h.redirect(dog.routes.addAnother)
     }
   }
 }]

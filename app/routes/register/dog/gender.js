@@ -1,15 +1,15 @@
 const Joi = require('joi')
-const { dog } = require('../../constants')
-const { getDogGender, setDogGender } = require('../../session/dog')
-const ViewModel = require('../../models/dog/gender')
+const { dog } = require('../../../constants')
+const { getDogGender, setDogGender } = require('../../../session/dog')
+const ViewModel = require('../../../models/dog/gender')
 
 module.exports = [{
   method: 'GET',
   path: dog.routes.gender,
   options: {
     handler: async (request, h) => {
-      const microchipped = getDogGender(request)
-      return h.view(dog.views.gender, new ViewModel(microchipped))
+      const gender = getDogGender(request)
+      return h.view(dog.views.gender, new ViewModel(gender))
     }
   }
 },
@@ -29,7 +29,7 @@ module.exports = [{
     handler: async (request, h) => {
       const gender = request.payload.gender
       setDogGender(request, gender)
-      return h.redirect(dog.routes.microchipped)
+      return h.redirect(dog.routes.neutered)
     }
   }
 }]

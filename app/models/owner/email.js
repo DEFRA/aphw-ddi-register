@@ -1,9 +1,9 @@
-const { register } = require('../../constants')
+const { owner } = require('../../constants')
 
 function ViewModel (value, error) {
   this.model = {
-    formAction: register.routes.email,
-    backLink: register.routes.phoneNumber,
+    formAction: owner.routes.email,
+    backLink: owner.routes.phoneNumber,
     email: {
       label: {
         text: 'What is your email address?',
@@ -18,7 +18,7 @@ function ViewModel (value, error) {
 
   if (error) {
     this.model.email.errorMessage = {
-      text: 'Enter your email address.'
+      text: 'Enter an email address in the correct format, like name@example.com.'
     }
   }
 }

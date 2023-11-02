@@ -1,4 +1,4 @@
-const { register: registerConstants, dog: dogConstants } = require('../../constants')
+const { owner: ownerConstants, dog: dogConstants } = require('../../constants')
 
 const formatDate = date => {
   if (date === null || date === undefined) {
@@ -8,15 +8,15 @@ const formatDate = date => {
   return `${date.day}/${date.month}/${date.year}`
 }
 
-function ViewModel (register, dogs, error) {
+function ViewModel (owner, dogs, error) {
   this.model = {
-    formAction: registerConstants.routes.confirmation,
+    formAction: ownerConstants.routes.confirmation,
     summary: {
       register: {
-        name: register?.name,
-        dateOfBirth: formatDate(register?.dateOfBirth),
-        phone: register?.phone,
-        email: register?.email,
+        name: [],
+        dateOfBirth: formatDate(owner?.dateOfBirth),
+        phone: owner?.phone,
+        email: owner?.email,
         address: []
       },
       dogs: dogs.map((dog, index) => ({
@@ -25,14 +25,24 @@ function ViewModel (register, dogs, error) {
         dateOfBirth: formatDate(dog?.[dogConstants.keys.dateOfBirth]),
         colour: dog?.[dogConstants.keys.colour],
         gender: dog?.gender,
+        neutered: dog?.neutered,
         microchipped: dog?.microchipped,
-        microchipNumber: dog?.microchipNumber,
-        preference: dog?.preference
+        microchipNumber: dog?.microchipNumber
       }))
     }
   }
 
-  const address = register?.address
+  const name = owner?.name
+
+  if (name !== null && name !== undefined) {
+    Object.keys(name).forEach(key => {
+      if (name[key]) {
+        this.model.summary.register.name.push(name[key])
+      }
+    })
+  }
+
+  const address = owner?.address
 
   if (address !== null && address !== undefined) {
     Object.keys(address).forEach(key => {

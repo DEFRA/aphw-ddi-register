@@ -63,6 +63,14 @@ const setDogGender = (request, value) => {
   set(request, keys.entry, keys.gender, value)
 }
 
+const getDogNeutered = (request) => {
+  return get(request, keys.entry, keys.neutered)
+}
+
+const setDogNeutered = (request, value) => {
+  set(request, keys.entry, keys.neutered, value)
+}
+
 const getDogMicrochipped = (request) => {
   return get(request, keys.entry, keys.microchipped)
 }
@@ -77,14 +85,6 @@ const getDogMicrochipNumber = (request) => {
 
 const setDogMicrochipNumber = (request, value) => {
   set(request, keys.entry, keys.microchipNumber, value)
-}
-
-const getDogPreference = (request) => {
-  return get(request, keys.entry, keys.preference)
-}
-
-const setDogPreference = (request, value) => {
-  set(request, keys.entry, keys.preference, value)
 }
 
 const addAnotherDog = (request) => {
@@ -106,11 +106,11 @@ module.exports = {
   setDogColour,
   getDogGender,
   setDogGender,
+  getDogNeutered,
+  setDogNeutered,
   getDogMicrochipped,
   setDogMicrochipped,
   getDogMicrochipNumber,
   setDogMicrochipNumber,
-  getDogPreference,
-  setDogPreference,
   addAnotherDog
 }

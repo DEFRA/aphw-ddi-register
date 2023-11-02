@@ -10,6 +10,9 @@ function ViewModel (value, error) {
         classes: 'govuk-label--l',
         isPageHeading: true
       },
+      hint: {
+        text: 'Enter the colours that best apply to your dog, for example, black, blue, brindle, fawn, red or white. You can enter more than one colour if your dog is mixed-colour.'
+      },
       id: 'colour',
       name: 'colour',
       classes: 'govuk-input--width-10',

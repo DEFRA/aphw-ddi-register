@@ -17,7 +17,7 @@
             text: "Name"
           },
           value: {
-            text: model.summary.register.name
+            text: model.summary.register.name | join(" ")
           },
           actions: {
             items: [
@@ -141,6 +141,14 @@
           },
           {
             key: {
+              text: "Neutered"
+            },
+            value: {
+              text: dog.neutered
+            }
+          },
+          {
+            key: {
               text: "Microchipped"
             },
             value: {
@@ -153,14 +161,6 @@
             },
             value: {
               text: dog.microchipNumber
-            }
-          },
-          {
-            key: {
-              text: "Preference"
-            },
-            value: {
-              text: dog.preference
             }
           }
         ]

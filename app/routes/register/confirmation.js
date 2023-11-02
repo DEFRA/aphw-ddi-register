@@ -1,5 +1,5 @@
 const sendEmail = require('../../notify')
-const { getRegister } = require('../../session/register')
+const { getOwner } = require('../../session/owner')
 const { getDog } = require('../../session/dog')
 const { createRow } = require('../../storage')
 const { register } = require('../../constants')
@@ -11,7 +11,7 @@ module.exports = {
   options: {
     handler: async (request, h) => {
       const registerDetails = {
-        register: getRegister(request),
+        register: getOwner(request),
         dog: getDog(request)
       }
 

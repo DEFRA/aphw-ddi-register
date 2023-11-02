@@ -2,7 +2,7 @@ const Joi = require('joi')
 
 // Define config schema
 const schema = Joi.object({
-  serviceName: Joi.string().default('Register your dog on the dangerous dog act'),
+  serviceName: Joi.string().default('Add an XL bully to the interim register'),
   port: Joi.number().default(3001),
   env: Joi.string().valid('development', 'test', 'production').default('development'),
   useRedis: Joi.boolean().default(false),

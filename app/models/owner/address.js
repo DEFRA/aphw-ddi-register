@@ -1,4 +1,4 @@
-const { register } = require('../../constants')
+const { owner } = require('../../constants')
 
 const errorMessages = {
   addressLine1: 'Enter the first line of the address',
@@ -10,8 +10,8 @@ const errorMessages = {
 
 function ViewModel (address, errors) {
   this.model = {
-    formAction: register.routes.address,
-    backLink: register.routes.postcode,
+    formAction: owner.routes.address,
+    backLink: owner.routes.postcode,
     address: {
       addressLine1: {
         id: 'addressLine1',

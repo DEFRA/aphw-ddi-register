@@ -1,4 +1,4 @@
-const { register } = require('../../constants')
+const { owner } = require('../../constants')
 
 function ViewModel (postcode, addresses = [], error) {
   const defaultOption = {
@@ -12,9 +12,9 @@ function ViewModel (postcode, addresses = [], error) {
   })))
 
   this.model = {
-    formAction: register.routes.selectAddress,
-    backLink: register.routes.postcode,
-    addressRoute: register.routes.address,
+    formAction: owner.routes.selectAddress,
+    backLink: owner.routes.postcode,
+    addressRoute: owner.routes.address,
     postcode,
     results: {
       label: {

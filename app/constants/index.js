@@ -1,7 +1,9 @@
-const register = require('./register')
+const owner = require('./owner')
 const dog = require('./dog')
+const register = require('./register')
 
 module.exports = {
-  register,
-  dog
+  owner,
+  dog,
+  register
 }

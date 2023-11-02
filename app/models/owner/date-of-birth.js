@@ -1,9 +1,9 @@
-const { register } = require('../../constants')
+const { owner } = require('../../constants')
 
 function ViewModel (dob, errors) {
   this.model = {
-    formAction: register.routes.dateOfBirth,
-    backLink: register.routes.address,
+    formAction: owner.routes.dateOfBirth,
+    backLink: owner.routes.address,
     dateOfBirth: {
       id: 'owner-date-of-birth',
       fieldset: {
@@ -14,7 +14,7 @@ function ViewModel (dob, errors) {
         }
       },
       hint: {
-        text: 'You must be 18 or over to register a dangerous dog.'
+        text: 'You must be 16 or over to add an XL bully to the interim register.'
       },
       items: [
         {

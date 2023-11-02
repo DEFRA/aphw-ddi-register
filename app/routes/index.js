@@ -1,9 +1,9 @@
-const { register } = require('../constants')
+const { owner } = require('../constants')
 
 module.exports = {
   method: 'GET',
   path: '/',
   handler: (request, h) => {
-    return h.view('index', { startLink: register.routes.name })
+    return h.view('index', { startLink: owner.routes.name })
   }
 }

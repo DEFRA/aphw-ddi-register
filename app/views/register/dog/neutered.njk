@@ -1,6 +1,6 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
 
 {% extends '_layout.njk' %}
 
@@ -11,7 +11,7 @@
     <div class="govuk-grid-column-one-half">
       {{ govukBackLink({
         text: "Back",
-        href: "/",
+        href: model.backLink,
         attributes: {
           id: "back"
         }
@@ -22,16 +22,15 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form method="POST" action="{{ model.formAction }}" novalidate>
-      {{ govukInput(model.name) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" action="{{ model.formAction }}" novalidate>
+        {{ govukRadios(model.neutered) }}
 
-      {{ govukButton({
-        text: "Continue"
-      }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
     </div>
-  </form>
-</div>
-
+  </div>
 {% endblock %}

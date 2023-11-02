@@ -1,8 +1,8 @@
 const Joi = require('joi')
-const { register } = require('../../constants')
+const { owner } = require('../../../constants')
 const { startOfDay, parse, isAfter, isValid, differenceInYears } = require('date-fns')
-const { getRegisterOwnerDob, setRegisterOwnerDob } = require('../../session/register')
-const ViewModel = require('../../models/register/date-of-birth')
+const { getBirthDate, setBirthDate } = require('../../../session/owner')
+const ViewModel = require('../../../models/owner/date-of-birth')
 
 const dobValidate = (value, helper) => {
   const options = {
@@ -24,8 +24,8 @@ const dobValidate = (value, helper) => {
 
   const age = differenceInYears(today, parsedDob, options)
 
-  if (age < 18) {
-    return helper.message('You must be aged 18 or over to register a dangerous dog.')
+  if (age < 16) {
+    return helper.message('You must be aged 16 or over to register an XL Bully.')
   }
 
   return value
@@ -33,17 +33,17 @@ const dobValidate = (value, helper) => {
 
 module.exports = [{
   method: 'GET',
-  path: register.routes.dateOfBirth,
+  path: owner.routes.dateOfBirth,
   options: {
     handler: async (request, h) => {
-      const dob = getRegisterOwnerDob(request)
-      return h.view(register.views.dateOfBirth, new ViewModel(dob))
+      const dob = getBirthDate(request)
+      return h.view(owner.views.dateOfBirth, new ViewModel(dob))
     }
   }
 },
 {
   method: 'POST',
-  path: register.routes.dateOfBirth,
+  path: owner.routes.dateOfBirth,
   options: {
     validate: {
       payload: Joi.object({
@@ -52,14 +52,14 @@ module.exports = [{
         year: Joi.number().required()
       }).custom(dobValidate),
       failAction: async (request, h, error) => {
-        setRegisterOwnerDob(request, request.payload)
-        const dob = getRegisterOwnerDob(request)
-        return h.view(register.views.dateOfBirth, new ViewModel(dob, error)).code(400).takeover()
+        setBirthDate(request, request.payload)
+        const dob = getBirthDate(request)
+        return h.view(owner.views.dateOfBirth, new ViewModel(dob, error)).code(400).takeover()
       }
     },
     handler: async (request, h) => {
-      setRegisterOwnerDob(request, request.payload)
-      return h.redirect(register.routes.phone)
+      setBirthDate(request, request.payload)
+      return h.redirect(owner.routes.phone)
     }
   }
 }]
