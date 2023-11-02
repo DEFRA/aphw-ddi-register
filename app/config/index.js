@@ -6,6 +6,7 @@ const schema = Joi.object({
   port: Joi.number().default(3001),
   env: Joi.string().valid('development', 'test', 'production').default('development'),
   useRedis: Joi.boolean().default(false),
+  serviceUri: Joi.string().uri(),
   notify: {
     apiKey: Joi.string().required(),
     templateId: Joi.string().required()
@@ -55,6 +56,7 @@ const config = {
   port: process.env.PORT,
   env: process.env.NODE_ENV,
   useRedis: process.env.NODE_ENV !== 'test',
+  serviceUri: process.env.SERVICE_URI,
   notify: {
     apiKey: process.env.NOTIFY_API_KEY,
     templateId: '8800c3c1-2b6e-43c4-b089-2d1b34cc3ccb'

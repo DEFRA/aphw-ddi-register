@@ -82,6 +82,14 @@ const setRegistrationId = (request, value) => {
   set(request, keys.entry, keys.registrationId, value)
 }
 
+const getRegistrationPaymentSucessful = (request) => {
+  return get(request, keys.entry, keys.paymentSuccessful)
+}
+
+const setRegistrationPaymentSucessful = (request, value) => {
+  set(request, keys.entry, keys.paymentSuccessful, value)
+}
+
 module.exports = {
   getRegister,
   setRegister,
@@ -100,5 +108,7 @@ module.exports = {
   getRegisterPaymentId,
   setRegisterPaymentId,
   getRegistrationId,
-  setRegistrationId
+  setRegistrationId,
+  getRegistrationPaymentSucessful,
+  setRegistrationPaymentSucessful
 }

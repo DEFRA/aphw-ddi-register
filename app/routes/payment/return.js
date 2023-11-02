@@ -1,5 +1,5 @@
 const paymentDetails = require('../../api/payment/details')
-const { getRegisterPaymentId } = require('../../session/register')
+const { getRegisterPaymentId, setRegistrationPaymentSucessful } = require('../../session/register')
 const { register } = require('../../constants')
 const { FAILED, CANCELLED, ERROR } = require('../../constants/payment-status')
 
@@ -14,9 +14,11 @@ module.exports = [
         const status = payment.state.status
 
         if (status === FAILED || status === CANCELLED || status === ERROR) {
+          setRegistrationPaymentSucessful(request, false)
           return h.redirect(register.routes.paymentFailed)
         }
 
+        setRegistrationPaymentSucessful(request, true)
         return h.redirect(register.routes.paymentSuccessful)
       }
     }

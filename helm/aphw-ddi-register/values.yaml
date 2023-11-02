@@ -37,6 +37,12 @@ container:
   azureStorageConnectionString: dummy
   azureStorageUseConnectionString: false
   azureStorageAccountName: aphwddi
+  paymentEnabled: false
+  paymentValue: 
+  paymentApiUrl: https://publicapi.payments.service.gov.uk/v1/payments
+  paymentApiKey:
+  paymentReturnUrl:
+  serviceUri:
 
 ingress:
   class: nginx
