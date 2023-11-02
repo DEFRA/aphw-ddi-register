@@ -1,4 +1,8 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
 version: v1.19.0
-ignore: {}
+ignore: 
+    SNYK-JS-AXIOS-6032459:
+        - 'axios':
+            reason: Issue with third party dependency version
+            expires: '2023-12-02T14:49:44.317Z'
 patch: {}
