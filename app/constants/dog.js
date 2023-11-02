@@ -28,7 +28,7 @@ const constants = {
     gender: 'gender',
     neutered: 'neutered',
     microchipped: 'microchipped',
-    microchipNumber: 'microchipNumber',
+    microchipNumber: 'microchipNumber'
   }
 }
 
