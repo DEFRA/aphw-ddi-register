@@ -34,7 +34,7 @@
     "applicationinsights": "^3.16.0",
     "date-fns": "^3.2.0",
     "dayjs": "^1.11.10",
-    "govuk-frontend": "^5.5.0",
+    "govuk-frontend": "^4.7.0",
     "joi": "^17.13.8",
     "libphonenumber-js": "^1.10.52",
     "notifications-node-client": "^8.2.0",
