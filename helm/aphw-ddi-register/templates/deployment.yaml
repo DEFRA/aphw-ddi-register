@@ -1,8 +1,3 @@
 {{- include "ffc-helm-library.deployment" (list . "aphw-ddi-register.deployment") -}}
 {{- define "aphw-ddi-register.deployment" -}}
-spec:
-  template:
-    spec:
-      containers:
-      - {{ include "ffc-helm-library.container" (list . "aphw-ddi-register.container") }}
 {{- end -}}

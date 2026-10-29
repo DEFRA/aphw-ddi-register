@@ -13,6 +13,7 @@ data:
   REDIS_PARTITION: {{ quote .Values.container.redisPartition }}
   {{- end }}
   REDIS_PORT: {{ quote .Values.container.redisPort }}
+  COOKIE_PASSWORD: {{ quote .Values.container.cookiePassword }}
   NOTIFY_API_KEY: {{ quote .Values.container.notifyApiKey }}
   AZURE_STORAGE_CONNECTION_STRING: {{ quote .Values.container.azureStorageConnectionString }}
   AZURE_STORAGE_USE_CONNECTION_STRING: {{ quote .Values.container.azureStorageUseConnectionString }}
