@@ -12,11 +12,10 @@ appInsights:
   connectionString:
 
 containerConfigMap:
-  name: aphw-ddi-register-config-map
+  name: aphw-ddi-register
 
 containerSecret:
-  name: aphw-ddi-register-container-secret
-  type: Opaque
+  name: aphw-ddi-register
 
 deployment: {}
 
@@ -30,7 +29,6 @@ container:
   imagePullPolicy: IfNotPresent
   redisHostname: redis-hostname.default
   redisPartition: aphw-ddi-register
-  redisPassword: redis
   redisPort: 6379
   notifyApiKey: notify-api-key
   osPlacesApiKey: os-places-api-key
@@ -58,3 +56,26 @@ readinessProbe:
   periodSeconds: 10
   failureThreshold: 3
   timeoutSeconds: 5
+
+workloadIdentity: true
+
+azureIdentity:
+  clientID: not-a-real-clientID
+  resourceID: not-a-real-resourceID
+
+secretProviderClass:
+  azure:
+    keyvaultName: SNDFFCINFKV2001
+    objects:
+      - objectName: snd2-aphw-appinsights-connectionString
+        objectType: secret
+      - objectName: snd2-redisPassword
+        objectType: secret
+  secretObjects:
+    - secretName: aphw-ddi-register
+      type: Opaque
+      data:
+        - objectName: snd2-aphw-appinsights-connectionString
+          key: APPINSIGHTS_CONNECTIONSTRING
+        - objectName: snd2-redisPassword
+          key: REDIS_PASSWORD

@@ -19,7 +19,7 @@ services:
       OS_PLACES_API_KEY: ${OS_PLACES_API_KEY:-test}
 
   aphw-ddi-register-azurite:
-    image: mcr.microsoft.com/azure-storage/azurite:3.23.0
+    image: mcr.microsoft.com/azure-storage/azurite:3.37.0
     command: "azurite --blobHost 0.0.0.0 --queueHost 0.0.0.0 --tableHost 0.0.0.0 --loose"
     labels:
       com.docker.compose.aphw.ddi.register.role: aphw-ddi-register-azurite
